@@ -57,6 +57,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/IMSAband/",
     dir: {
       input: "src",
       includes: "_includes",

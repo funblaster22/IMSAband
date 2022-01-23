@@ -19,7 +19,7 @@ hero: /public/no-img.png
     {% if nextPost.url %}
       <p>
         <strong>Next post</strong>: 
-        <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+        <a class="next" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
       </p>
     </div>
     {% endif %}

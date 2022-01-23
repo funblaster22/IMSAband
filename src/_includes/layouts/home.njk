@@ -59,9 +59,9 @@ templateClass: tmpl-home
           <div style="text-align: center">
             <h1>{{ post.data.title }}</h1>
             <h3>{{ post.data.description }}</h3>
-            <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url }}'><button>Read More</button></a></div>
+            <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url | url }}'><button>Read More</button></a></div>
           </div>
-          <div class="parallax" style="background-image: url('{{ post.data.hero }}')"></div>
+          <div class="parallax" style="background-image: url('{{ post.data.hero | url }}')"></div>
         </div>
       {% endif %}
     {%- endfor -%}
