@@ -1,7 +1,7 @@
 {
-  "name": "hello-eleventy",
+  "name": "imsaband",
   "version": "0.0.1",
-  "description": "A simple blog, set up with Eleventy.",
+  "description": "IMSA's website for all music.",
   "scripts": {
     "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
@@ -17,7 +17,7 @@
     "node": "12"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-eleventy"
+    "url": "https://github.com/funblaster22/IMSAband"
   },
   "glitch": {
     "projectType": "generated_static"
@@ -26,6 +26,6 @@
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "eleventy"
   ]
 }

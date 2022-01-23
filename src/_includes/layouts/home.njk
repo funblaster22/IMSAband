@@ -3,15 +3,45 @@ layout: layouts/base.njk
 templateClass: tmpl-home
 ---
 
+<style>
+  .parallax-container {
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    perspective: 1px;
+    /*perspective-origin: 0 0;*/
+  }
+
+  .parallax {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateZ(-2px) scale(3);
+      z-index: -1;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+</style>
+
 <div class="wrapper home">
   <div class="content">
     {{ content | safe }}
-    <ul>
-      {%- for post in collections.posts -%}
-        <li{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></li>
-      {%- endfor -%}
-      <li><a href="/posts">View all posts</a></li>
-    </ul>
+    {%- for post in collections.posts -%}
+      {% if (loop.index <= 3 and page.url != post.url) %}
+        <div class="parallax-container perfect-center">
+          <div>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></div>
+          <div class="parallax" style="background-image: url('{{ post.data.hero }}')"></div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
   </div>
 </div>
 

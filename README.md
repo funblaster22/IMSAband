@@ -1,18 +1,15 @@
-# Hello Eleventy
+# IMSA Music
 
-[Eleventy](https://www.11ty.dev/) is a simple static site generator. That means you get all the power of a server-side framework but it builds plain HTML files. 
+**[Live site:]()**
 
-While you're working in the editor your changes will happen 🪄 immediately in the preview window. As you code the site is serving files from a local build directory. When you close the editor your site will run a `build` script then serve the output as a fast and always-on static site.
+Welcome to the IMSA music website! This project is licensed under GPL-3, so you are free to modify and distribute it
+as long as you include the license and source code.
 
-## What's in this project?
-
-← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
+### Project structure
 
 ← `public/index.css`: The styling rules for your pages and posts.
 
 ← `src/`: This folder contains all the files Eleventy will use to build your site.
-
-### Working in the `src/` folder 📁
 
 ← `src/index.md`, `src/posts.md`, `src/about.md`: These Markdown files are the content for your Home, Posts, and About pages.
 
@@ -23,12 +20,11 @@ While you're working in the editor your changes will happen 🪄 immediately in 
 ← `src/_includes`: This is where all of your page level layouts go. The **\_** tells you that this is an _eleventy only_ folder.
 
 
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
+### Overview of technologies
+- [11ty](https://www.11ty.dev/), a static site generator
+- [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) (*.njk), a templating language
+- [Bootstrap](https://getbootstrap.com/docs/), a UI component library
+- [Markdown](https://www.markdownguide.org/basic-syntax/) (*.md), an easily readable markup language
 
-## You built this with Glitch!
-
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
-
-- Want more details about Eleventy on Glitch? We've got a [Help Center article](https://help.glitch.com/kb/article/111) just for that.
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+I decided against Jekyl because it is written in Ruby, which I am unfamiliar with.
+I also figured it would be easier to incorporate extra frameworks with 11ty since it uses javascript.
