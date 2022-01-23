@@ -6,63 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Your new 11ty blog" />
     <link rel="stylesheet" type="text/css" href="{{ '/public/style.css' | url }}" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    {% seo "" %}
-    <style>
-      .social img {
-        height: 1em;
-      }
-
-      .navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .footer {
-        background-color: black;
-      }
-    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a href="{{ '/' | url }}" class="navbar-brand"><img src="{{ '/bandlogo.png' | url }}" alt="IMSA band logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          {%- for navPage in collections.pages -%}
-            <li class="nav-item" {% if page.url == navPage.url %} aria-current="page"{% endif %}>
-              <a href="{{ navPage.url | url }}" class="nav-link">{{ navPage.data.title }}</a>
-            </li>
-          {%- endfor -%}
-          <li class="nav-item social">
-            <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank"><img src="{{ '/public/youtube.png' | url }}"></a>
-            <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank"><img src="{{ '/public/facebook.png' | url }}"></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
     {{ content | safe }}
-
-    <footer class="footer">
-      <div class="links">
-        <a href="/">Home</a>
-        <span class="divider">|</span>
-        <a href="/posts">Posts</a>
-        <span class="divider">|</span>
-        <a href="/about">About</a>
-      </div>
-      <a class="btn--remix" target="_top" href="https://glitch.com/edit/#!/remix/glitch-hello-eleventy">
-      <img src="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FLogo_Color.svg?v=1618199565140" alt="" />
-      Remix on Glitch
-      </a>
-    </footer>
-    
-  </main>
-   
   </body>
 </html>
