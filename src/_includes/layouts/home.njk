@@ -4,6 +4,25 @@ templateClass: tmpl-home
 ---
 
 <style>
+  * {
+    --color-text-main: white;
+    color: white;
+    text-shadow: 0 0 20px black;
+  }
+
+  button {
+      border-radius: 3px;
+      border: 1px solid white;
+      background: transparent;
+      box-shadow: 0 0 20px black;
+      transition: background 500ms;
+  }
+
+  button:hover {
+      background: white;
+      color: black
+  }
+
   .parallax-container {
     /* Full height */
     height: 100vh;
@@ -37,7 +56,11 @@ templateClass: tmpl-home
     {%- for post in collections.posts -%}
       {% if (loop.index <= 3 and page.url != post.url) %}
         <div class="parallax-container perfect-center">
-          <div>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></div>
+          <div style="text-align: center">
+            <h1>{{ post.data.title }}</h1>
+            <h3>{{ post.data.description }}</h3>
+            <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url }}'><button>Read More</button></a></div>
+          </div>
           <div class="parallax" style="background-image: url('{{ post.data.hero }}')"></div>
         </div>
       {% endif %}

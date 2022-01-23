@@ -5,7 +5,7 @@ date: 2021-03-09
 tags:
   - posts
 layout: layouts/post.njk
-hero: public/wind-ensemble.png
+hero: /public/wind-ensemble.png
 ---
 
 Congrats! You've launched a beautiful new Eleventy-powered blog on Glitch. Want to see what makes creating on Glitch magical? Check it out:
