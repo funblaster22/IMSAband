@@ -5,7 +5,7 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Your new 11ty blog" />
-    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="stylesheet" type="text/css" href="/IMSAband/public/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Home - IMSA Music</title>
@@ -36,6 +36,12 @@
         height: 1em;
       }
 
+      .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
       .footer {
         background-color: black;
       }
@@ -43,22 +49,22 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a href="/" class="navbar-brand"><img src="bandlogo.png" alt="IMSA band logo" /></a>
+      <a href="/IMSAband/" class="navbar-brand"><img src="/IMSAband/bandlogo.png" alt="IMSA band logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav"><li class="nav-item" >
-              <a href="/pages/about/" class="nav-link">About</a>
+              <a href="/IMSAband/pages/about/" class="nav-link">About</a>
             </li><li class="nav-item" >
-              <a href="/pages/cal/" class="nav-link">Calendar</a>
+              <a href="/IMSAband/pages/cal/" class="nav-link">Calendar</a>
             </li><li class="nav-item" >
-              <a href="/pages/ensambles/wind/" class="nav-link">Wind Ensemble</a>
+              <a href="/IMSAband/pages/ensambles/wind/" class="nav-link">Wind Ensemble</a>
             </li><li class="nav-item" >
-              <a href="/pages/posts/" class="nav-link">Posts</a>
+              <a href="/IMSAband/pages/posts/" class="nav-link">Posts</a>
             </li><li class="nav-item social">
-            <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank"><img src="/public/youtube.png"></a>
-            <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank"><img src="/public/facebook.png"></a>
+            <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank"><img src="/IMSAband/public/youtube.png"></a>
+            <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank"><img src="/IMSAband/public/facebook.png"></a>
           </li>
         </ul>
       </div>
@@ -66,103 +72,84 @@
 
     
 <style>
- * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    html { /* THIS CODE IS REALLY IMPORTANT!!! */
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    body {
-        width: 100%;
-        height: 100%;
-        /* Text styles */
-        font-family: 'Lato',sans-serif;
-        font-size: 18px;
-        font-weight: 300;
-        color: #212121;
-        perspective: 4px; /* The depth */
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
-    header {
-        width: 100%;
-        min-height: 100vh;
-        position: relative;
-        transform-style: preserve-3d;
-    }
-    header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: block;
-        background: url('bg.jpg');
-        background-size: cover;
-        z-index: 0;
-        transform: translateZ(-4px) scale(2);
-    }
-    header div {
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        padding: 0 30px;
-        font-family: 'Roboto Condensed', sans-serif;
-        transform: translateZ(-2px) scale(1.5);
-    }
-    header h1 {
-        font-size: 4.5rem;
-        font-weight: 700;
-        color: #009688;
-    }
-    header h2 {
-        font-size: 2.2rem;
-        font-weight: 300;
-    }
-    section{
-        width: 100%;
-        background: white;
-        position: relative;
-        z-index: 2;
-    }
-    .container {
-        margin: auto; /* To center the text horizontally */
-        max-width: 1000px; /* Limiting the width for extra large screens */
-        padding: 80px 40px;
-    }
-    .container h3 {
-        font-family: 'Roboto Condensed', sans-serif;
-        font-weight: 700;
-        font-size: 3rem;
-    }
-    .container p {
-        padding-top: 30px;
-        line-height: 1.8;
-    }
+  * {
+    --color-text-main: white;
+    color: white;
+    text-shadow: 0 0 20px black;
+  }
+
+  button {
+      border-radius: 3px;
+      border: 1px solid white;
+      background: transparent;
+      box-shadow: 0 0 20px black;
+      transition: background 500ms;
+  }
+
+  button:hover {
+      background: white;
+      color: black
+  }
+
+  .parallax-container {
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    perspective: 1px;
+    /*perspective-origin: 0 0;*/
+  }
+
+  .parallax {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateZ(-2px) scale(3);
+      z-index: -1;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
 </style>
 
-<header>
-  <div>
-    <h1>Parallax Scrolling Effect</h1>
-    <h2>Create this simple parallax effect using pure CSS</h2>
-  </div>
-</header>
-<section>
-  <div class="container">
-    <h3>Some cool title here</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores harum veritatis nemo magni odio reprehenderit atque, esse animi porro suscipit vero nobis modi quis. Exercitationem quasi beatae, assumenda officia illum sunt. Cum voluptas maiores vitae eius hic inventore deleniti placeat perferendis quam ut nostrum maxime optio voluptatibus ab laboriosam, quia consectetur atque minus?
-    </p>
-    <p>
-      Adipisci amet aut sint voluptates delectus aperiam? Veniam ab illum enim in libero nihil culpa explicabo perspiciatis veritatis non repellendus architecto excepturi nostrum porro voluptatem aperiam animi asperiores, a voluptatibus temporibus minima voluptas ipsa! Recusandae nostrum, aut, voluptates est error iusto, eaque excepturi soluta quas maiores amet.
-    </p>
-  </div>
-</section>
+<div class="wrapper home">
+  <div class="content">
+    <h1>Home of the Titans! Scroll for more!</h1>
+
+        <div class="parallax-container perfect-center">
+          <div style="text-align: center">
+            <h1>Getting started with Eleventy on Glitch!</h1>
+            <h3>You won&#39;t believe how easy it can be.</h3>
+            <div>2021-03-09 &nbsp;&nbsp;&nbsp;&nbsp; <a href='/IMSAband/posts/eleventy-on-glitch/'><button>Read More</button></a></div>
+          </div>
+          <div class="parallax" style="background-image: url('/IMSAband/public/wind-ensemble.png')"></div>
+        </div>
+      
+        <div class="parallax-container perfect-center">
+          <div style="text-align: center">
+            <h1>It&#39;s time to write some posts</h1>
+            <h3>Eleventy makes it really easy to create a blog</h3>
+            <div>2021-03-10 &nbsp;&nbsp;&nbsp;&nbsp; <a href='/IMSAband/posts/creating-posts/'><button>Read More</button></a></div>
+          </div>
+          <div class="parallax" style="background-image: url('/IMSAband/public/no-img.png')"></div>
+        </div>
+      
+        <div class="parallax-container perfect-center">
+          <div style="text-align: center">
+            <h1>Layouts &amp; Design</h1>
+            <h3>How to edit layouts</h3>
+            <div>2021-03-11 &nbsp;&nbsp;&nbsp;&nbsp; <a href='/IMSAband/posts/layouts-and-design/'><button>Read More</button></a></div>
+          </div>
+          <div class="parallax" style="background-image: url('/IMSAband/public/no-img.png')"></div>
+        </div>
+      </div>
+</div>
 
 
 
