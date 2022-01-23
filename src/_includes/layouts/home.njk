@@ -4,6 +4,17 @@ templateClass: tmpl-home
 ---
 
 <style>
+    body {
+      /* Existing styles here */
+      perspective: 4px; /* The depth */
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .wrapper, .content {
+        transform-style: preserve-3d;
+    }
+
   .parallax-container {
     /* Full height */
     height: 100vh;
@@ -11,6 +22,7 @@ templateClass: tmpl-home
     position: relative;
 
     perspective: 1px;
+    transform-style: preserve-3d;
     /*perspective-origin: 0 0;*/
   }
 
@@ -37,8 +49,8 @@ templateClass: tmpl-home
     {%- for post in collections.posts -%}
       {% if (loop.index <= 3 and page.url != post.url) %}
         <div class="parallax-container perfect-center">
-          <div>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></div>
           <div class="parallax" style="background-image: url('{{ post.data.hero }}')"></div>
+          <div>{{ post.data.page.date | htmlDateString }} — <a href='{{ post.url }}'>{{ post.data.title }}</a></div>
         </div>
       {% endif %}
     {%- endfor -%}
