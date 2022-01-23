@@ -8,25 +8,25 @@
     <link rel="stylesheet" type="text/css" href="/public/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Layouts &amp; Design - IMSA Music</title>
+    <title>Calendar - IMSA Music</title>
 
 <meta name="description" content="IMSA band, orchestra, and choir info and concerts">
 <meta name="robots" content="index,follow">
 <meta name="author" content="undefined">
 
-<link rel="canonical" href="https://undefined.glitch.me/posts/layouts-and-design/">
+<link rel="canonical" href="https://undefined.glitch.me/pages/cal/">
 
-<meta property="og:title" content="Layouts &amp; Design - IMSA Music">
+<meta property="og:title" content="Calendar - IMSA Music">
 <meta property="og:type" content="article">
 
-<meta property="og:url" content="https://undefined.glitch.me/posts/layouts-and-design/">
+<meta property="og:url" content="https://undefined.glitch.me/pages/cal/">
 <meta property="og:description" content="IMSA band, orchestra, and choir info and concerts">
 <meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908">
 
 <meta name="twitter:card" content="summary">
 
-<meta name="twitter:url" content="https://undefined.glitch.me/posts/layouts-and-design/">
-<meta name="twitter:title" content="Layouts &amp; Design - IMSA Music">
+<meta name="twitter:url" content="https://undefined.glitch.me/pages/cal/">
+<meta name="twitter:title" content="Calendar - IMSA Music">
 <meta name="twitter:description" content="IMSA band, orchestra, and choir info and concerts">
 <meta name="twitter:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-eleventy-social.png?v=1616712747908">
 
@@ -50,7 +50,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav"><li class="nav-item" >
               <a href="/pages/about/" class="nav-link">About</a>
-            </li><li class="nav-item" >
+            </li><li class="nav-item"  aria-current="page">
               <a href="/pages/cal/" class="nav-link">Calendar</a>
             </li><li class="nav-item" >
               <a href="/pages/ensambles/wind/" class="nav-link">Wind Ensemble</a>
@@ -65,37 +65,12 @@
     </nav>
 
     
-<div class="wrapper post">
-  <div>
-    <h1 class='postTitle'>Layouts &amp; Design</h1>
-
-    <p>We've included a few helpful templates to get you started, which you can find nested in the <code>src/_includes/layouts</code> folder.</p>
-<p>By default eleventy uses a templating language called <a href="https://mozilla.github.io/nunjucks/">nunjucks</a>, and has files ending in <code>.njk</code>.</p>
-<h3>base.njk</h3>
-<p>This is your default template and each template extends from this one.</p>
-<h3>home.njk</h3>
-<p>Home extends the base template, and makes a list of the blog posts that you've made, to display in a list.</p>
-<p><code>&lt;li&gt;2021-03-09 — &lt;a href='/posts/eleventy-on-glitch/'&gt;Getting started with Eleventy on Glitch!&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-10 — &lt;a href='/posts/creating-posts/'&gt;It's time to write some posts&lt;/a&gt;&lt;/li&gt;&lt;li aria-current=&quot;page&quot;&gt;2021-03-11 — &lt;a href='/posts/layouts-and-design/'&gt;Layouts &amp; Design&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-12 — &lt;a href='/posts/about-pages/'&gt;About Pages &amp; Other Content&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-13 — &lt;a href='/posts/npm-packages/'&gt;NPM Packages&lt;/a&gt;&lt;/li&gt;&lt;li&gt;2021-03-18 — &lt;a href='/posts/next-steps/'&gt;Next Steps&lt;/a&gt;&lt;/li&gt;</code></p>
-<p>This loops through all of your posts and displays a link to them. A quick optimization might be limiting this to 5 posts!</p>
-<h3>page.njk</h3>
-<p>Page is a template for additional pages like <a href="/about">about</a>.</p>
-
-    <div class="controls">
-    
-      <p>
-        <strong>Previous post</strong>: 
-        <a class="previous" href="/posts/creating-posts/">It&#39;s time to write some posts</a>
-      </p>
-    
-    
-      <p>
-        <strong>Next post</strong>: 
-        <a class="next" href="/posts/about-pages/">About Pages &amp; Other Content</a>
-      </p>
-    </div>
+<div class="wrapper">
+  <div class="content">
     
   </div>
 </div>
+
 
     <footer class="footer">
       <div class="links">
