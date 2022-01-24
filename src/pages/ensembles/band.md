@@ -1,0 +1,17 @@
+---
+title: Band
+description: IMSA's concert band, wind ensemble, and others
+---
+
+A band is typically comprised of all the non-string instruments, like the flute, clarinet, oboe, saxophone, trumpet, trombone, tuba, and percussion.
+IMSA has two levels of band, _Concert Band_ and _Wind Ensemble_. The former accepts all students, while the latter requires an audition to get in.
+
+### Concert Band
+List of students
+
+### Wind Ensemble
+List of students
+
+### Pep Band
+All and students are required to participate in the [pep band](), which (TODO: description).
+TODO: link to post with preview.

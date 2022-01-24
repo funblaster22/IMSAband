@@ -1,6 +1,6 @@
 # IMSA Music
 
-**[Live site:]()**
+**[Live site: https://funblaster22.github.io/IMSAband/](https://funblaster22.github.io/IMSAband/)**
 
 Welcome to the IMSA music website! This project is licensed under GPL-3, so you are free to modify and distribute it
 as long as you include the license and source code.

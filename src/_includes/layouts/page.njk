@@ -1,8 +1,17 @@
 ---
 layout: layouts/base.njk
 templateClass: tmpl-home
+hero: /public/no-img.png
 ---
 
+<style>
+    .hero {
+        width: 100vw;
+        height: 12rem;
+    }
+</style>
+
+<div class="hero" style="background-image: url('{{ hero |url }}')"></div>
 <div class="wrapper">
   <div class="content">
     {{ content | safe }}

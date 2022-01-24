@@ -41,27 +41,21 @@ templateClass: tmpl-home
       left: 0;
       transform: translateZ(-2px) scale(3);
       z-index: -1;
-
-      /* Create the parallax scrolling effect */
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
   }
 </style>
 
 <div class="wrapper home">
   <div class="content">
     {{ content | safe }}
-    {%- for post in collections.posts -%}
+    {%- for post in collections.posts.reverse() -%}
       {% if (loop.index <= 3 and page.url != post.url) %}
         <div class="parallax-container perfect-center">
-          <div style="text-align: center">
+          <div style="text-align: center;max-width: 900px;">
             <h1>{{ post.data.title }}</h1>
             <h3>{{ post.data.description }}</h3>
             <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url | url }}'><button>Read More</button></a></div>
           </div>
-          <div class="parallax" style="background-image: url('{{ post.data.hero | url }}')"></div>
+          <div class="parallax hero" style="background-image: url('{{ post.data.hero | url }}')"></div>
         </div>
       {% endif %}
     {%- endfor -%}
