@@ -56,6 +56,11 @@ module.exports = function(eleventyConfig) {
     return coll;
   });
 
+  // Nunjucks Shortcode
+  eleventyConfig.addPairedNunjucksShortcode("parallax", function(content, imgSrc) {
+
+  });
+
   return {
     pathPrefix: "/IMSAband/",
     dir: {

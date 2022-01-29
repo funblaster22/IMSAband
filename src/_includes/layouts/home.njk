@@ -45,8 +45,10 @@ templateClass: tmpl-home
 </style>
 
 <div class="wrapper home">
+  <div class="hero hero-sm perfect-center" style="background-image: url('{{ '/public/no-img.png' | url }}')">
+    <h1>Home of the Titans! Scroll for more!</h1>
+  </div>
   <div class="content">
-    {{ content | safe }}
     {%- for post in collections.posts.reverse() -%}
       {% if (loop.index <= 3 and page.url != post.url) %}
         <div class="parallax-container perfect-center">

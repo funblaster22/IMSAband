@@ -13,5 +13,5 @@ List of students
 List of students
 
 ### Pep Band
-All and students are required to participate in the [pep band](), which (TODO: description).
+All and students are required to participate in the [pep band]({{ '/posts/pep-band' | url }}), which (TODO: description).
 TODO: link to post with preview.
