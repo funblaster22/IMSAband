@@ -60,8 +60,20 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedNunjucksShortcode("parallax", function(content, imgSrc) {
 
   });
+  eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {
+    instrument = instrument.charAt(0).toUpperCase() + instrument.substring(1).toLowerCase();
+    const items = content.replace(/^\*\*/gm, '<abbr title="Concert Master">**</abbr> ')
+        .replace(/^\*(?!\*)/gm, '<abbr title="Section Leader">*</abbr> ')
+        .split('\n').slice(1, -1).join('<br />');
+    return `
+<details>
+  <summary>${instrument}</summary>
+  ${items}
+</details>`;
+  });
 
   return {
+    markdownTemplateEngine: "njk",
     pathPrefix: "/IMSAband/",
     dir: {
       input: "src",
