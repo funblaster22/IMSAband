@@ -64,11 +64,11 @@ module.exports = function(eleventyConfig) {
     instrument = instrument.charAt(0).toUpperCase() + instrument.substring(1).toLowerCase();
     const items = content.replace(/^\*\*/gm, '<abbr title="Concert Master">**</abbr> ')
         .replace(/^\*(?!\*)/gm, '<abbr title="Section Leader">*</abbr> ')
-        .split('\n').slice(1, -1).join('<br />');
+        .replace(/\n/g, "</li><li>");
     return `
 <details>
   <summary>${instrument}</summary>
-  ${items}
+  <ul class="reset">${items}</ul>
 </details>`;
   });
 

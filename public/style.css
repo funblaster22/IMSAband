@@ -200,6 +200,17 @@ ul.no-bullet {
 START IMSA band styles
 ******************************************************************************/
 
+details {
+  width: fit-content;
+}
+
+ul.reset, ol.reset {
+  list-style: none;
+}
+.reset li {
+  margin: 0;
+}
+
 .perfect-center {
   display: flex;
   align-items: center;
