@@ -211,3 +211,8 @@ START IMSA band styles
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.hero-sm {
+  width: 100vw;
+  height: 12rem;
+}
