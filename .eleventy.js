@@ -1,5 +1,21 @@
 const { DateTime } = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
+const Image = require("@11ty/eleventy-img");
+const path = require('path');
+
+const pathPrefix = "/IMSAband";
+/** Returns a promise if async=true or an object if async=false */
+function convertImg(src, {sizes=[], async=true}={}) {
+  const imgDir = path.parse(src).dir;
+  // 11ty image does not support absolute file paths because it thinks they are URLs
+  // Currently, any images have to go into the src/public directory
+  return (async ? Image : Image.statsSync)(path.join('src', src), {
+    //widths,
+    formats: ["jpeg", "avif"],
+    outputDir: path.join('build', imgDir),
+    urlPath: path.join(pathPrefix, imgDir),
+  });
+}
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats([
@@ -34,6 +50,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   });
+  // for some reason, async filters cause 11ty to quit without errors TODO: stay tuned to future updates
+  eleventyConfig.addNunjucksFilter("img", src => {
+    const metadata = convertImg(src, {async: false});
+    const picture = Image.generateObject(metadata, {alt: ""}).picture;
+    const test = picture.map(img => `url('${img?.source?.srcset || img.img.src}') type('${img?.source?.type || 'image/jpeg'}')`);
+
+    return "-webkit-image-set(" + test.join(',') + ")";
+  });
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
   
@@ -56,10 +80,23 @@ module.exports = function(eleventyConfig) {
     return coll;
   });
 
-  // Nunjucks Shortcode
+  // region Nunjucks Shortcodes
   eleventyConfig.addPairedNunjucksShortcode("parallax", function(content, imgSrc) {
 
   });
+
+  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", className="", sizes=[]}={}) {
+    const metadata = await convertImg(src, {sizes});
+
+    return Image.generateHTML(metadata, {
+      alt: alt,
+      loading: "lazy",
+      decoding: "async",
+      style,
+      class: className
+    })
+  });
+
   eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {
     instrument = instrument.charAt(0).toUpperCase() + instrument.substring(1).toLowerCase();
     const items = content.replace(/^\*\*/gm, '<abbr title="Concert Master">**</abbr> ')
@@ -71,10 +108,11 @@ module.exports = function(eleventyConfig) {
   <ul class="reset">${items}</ul>
 </details>`;
   });
+  // endregion
 
   return {
     markdownTemplateEngine: "njk",
-    pathPrefix: "/IMSAband/",
+    pathPrefix,
     dir: {
       input: "src",
       includes: "_includes",
