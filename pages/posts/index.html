@@ -2,11 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self' cdn.jsdelivr.net www.google-analytics.com; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; img-src 'self' *; font-src 'self';">
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Your new 11ty blog" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/IMSAband/public/style.css" />
     <title>Posts - IMSA Music</title>
 
@@ -36,22 +35,107 @@
         height: 1em;
       }
 
+      .footer {
+        background-color: black;
+      }
+
+      button {
+        border-radius: 0.25rem;
+        border: 1px solid white;
+        background: transparent;
+        box-shadow: 0 0 20px black;
+        transition: background 500ms;
+      }
+
+      /* Navbar Styles */
+      @media (min-width: 768px) {
+        .navbar-expand-md {
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+        }
+        .navbar-expand-md .navbar-collapse {
+          display: flex!important;
+          flex-basis: auto;
+        }
+        .navbar-expand-md .navbar-nav {
+          flex-direction: row;
+        }
+        .navbar-expand-md .navbar-nav .nav-link {
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+        }
+        .navbar-expand-md .navbar-toggler {
+          display: none;
+        }
+      }
+
       .navbar {
         position: absolute;
         top: 0;
         left: 0;
+        width: 97vw;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
       }
-
-      .footer {
-        background-color: black;
+      .navbar-brand {
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        transition: box-shadow .15s ease-in-out;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+      }
+      .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+      }
+      .nav-link {
+        display: block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      .navbar-collapse {
+        flex-basis: 100%;
+        flex-grow: 1;
+        align-items: center;
+      }
+      .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
       }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark">
       <a href="/IMSAband/" class="navbar-brand"><picture><source type="image/avif" srcset="/IMSAband/public/M9LxlKlhjg-1.avif 1w"><img alt="IMSA band logo" loading="lazy" decoding="async" style="" class="" src="/IMSAband/public/M9LxlKlhjg-1.jpeg" width="1" height="1"></picture></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">🍔</span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav"><li class="nav-item" >
@@ -67,8 +151,8 @@
             </li><li class="nav-item"  aria-current="page">
               <a href="/IMSAband/pages/posts/" class="nav-link">Posts</a>
             </li><li class="nav-item social">
-            <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank"><img src="/IMSAband/public/youtube.svg"></a>
-            <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank"><img src="/IMSAband/public/facebook.svg"></a>
+            <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank" rel="noopener noreferrer"><img src="/IMSAband/public/youtube.svg"></a>
+            <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank" rel="noopener noreferrer"><img src="/IMSAband/public/facebook.svg"></a>
           </li>
         </ul>
       </div>
