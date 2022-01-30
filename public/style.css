@@ -28,14 +28,14 @@ to this section's matching END comment to see page-specific styles.
 /* Import fonts */
 @font-face {
   font-family: HK Grotesk;
-  src: url("/IMSAband/public/Grotesk-Regular.otf")
-    format("opentype");
+  src: url("/IMSAband/public/Grotesk-Regular.otf") format("opentype");
+  font-display: swap;
 }
 @font-face {
   font-family: HK Grotesk;
   font-weight: bold;
-  src: url("/IMSAband/public/Grotesk-Bold.otf")
-    format("opentype");
+  src: url("/IMSAband/public/Grotesk-Bold.otf") format("opentype");
+  font-display: swap;
 }
 
 /* Navigation grid */
@@ -77,6 +77,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-main);
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 .wrapper {
   min-height: var(--wrapper-height);
