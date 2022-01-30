@@ -85,33 +85,15 @@ module.exports = function(eleventyConfig) {
 
   });
 
-  /*const imageShortcode = async (
-      relativeSrc,
-  ) => {
-    const { dir: imgDir } = path.parse(relativeSrc);
-    const fullSrc = path.join('src', relativeSrc);
-    console.log(fullSrc)
-
-    const imageMetadata = await Image(fullSrc, {
-      outputDir: path.join('_site', imgDir),
-      urlPath: imgDir,
-    });
-
-    return Image.generateHTML(imageMetadata, {
-      alt: "alt",
-      loading: "lazy",
-      decoding: "async",
-    })
-  };*/
-
-  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", sizes=[]}={}) {
+  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", className="", sizes=[]}={}) {
     const metadata = await convertImg(src, {sizes});
 
     return Image.generateHTML(metadata, {
       alt: alt,
       loading: "lazy",
       decoding: "async",
-      style
+      style,
+      class: className
     })
   });
 

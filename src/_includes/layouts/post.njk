@@ -4,7 +4,9 @@ templateClass: tmpl-home
 hero: /public/no-img.png
 ---
 
-<div class="hero hero-sm" style="background-image: url('{{ hero |url }}')"></div>
+<div class="parallax-container">
+  {% img hero, "", {className: "parallax hero hero-sm"} %}
+</div>
 <div class="wrapper post">
   <div>
     <h1 class='postTitle'>{{title}}</h1>
