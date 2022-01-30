@@ -104,8 +104,22 @@ module.exports = function(eleventyConfig) {
   });
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addPairedNunjucksShortcode("parallax", function(content, imgSrc) {
-
+  eleventyConfig.addNunjucksShortcode("card", function(url) {
+    const data = getPageData("./src/" + url + ".md");
+    console.log(url, data);
+    const imgMetadata = convertImg(data.hero || "/public/no-img.png", {async: false});
+    const img = Image.generateHTML(imgMetadata, {
+      alt: "",
+      decoding: "async",
+      style: "width: 100%; height: auto;"
+    });
+    return `
+<a href="${path.join(config.pathPrefix, url)}"><div class="card">
+    ${img}
+    <strong>${data.title}</strong>
+    ${data.description}
+</div></a>
+`;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", className="", sizes=[]}={}) {

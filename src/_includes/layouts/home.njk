@@ -20,9 +20,10 @@ templateClass: tmpl-home
     {% img '/public/no-img.png', "", {className: "parallax hero hero-sm"} %}
     <h1>Home of the Titans! Scroll for more!</h1>
   </div>
-  <div class="content">
+  <div>
     {%- for post in collections.posts.reverse() -%}
       {% if (loop.index <= 3 and page.url != post.url) %}
+        {# TODO: would be cool if I could apple inset box shaddows (currently the image covers them up) #}
         <div class="parallax-container perfect-center" style="height: 100vh;">
           <div style="text-align: center;max-width: 900px;">
             <h1>{{ post.data.title }}</h1>

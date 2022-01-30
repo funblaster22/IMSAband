@@ -1,6 +1,9 @@
 ---
 title: Band
 description: IMSA's concert band, wind ensemble, and others
+related:
+    - /posts/pep-band
+    - /pages/ensembles/orchestra
 ---
 
 A band is typically comprised of all the non-string instruments, like the flute, clarinet, oboe, saxophone, trumpet, trombone, tuba, and percussion.

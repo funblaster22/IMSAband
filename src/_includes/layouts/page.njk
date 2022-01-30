@@ -13,8 +13,32 @@ hero: /public/no-img.png
     line-height: 1.1;
     margin-bottom: 2rem;
   }
-  .controls {
-    margin: 3rem 0 2rem;
+
+  /* Preview Card styles */
+  @media (min-width: 768px) {
+    .wrapper {
+      flex-direction: row!important;
+      gap: 1em;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    border-radius: 2rem 2rem 0.5rem 0.5rem;
+    overflow: hidden;
+    max-width: 500px;
+    border: 1px solid var(--color-text-main);
+    background: var(--color-primary);
+    min-width: 220px;
+  }
+  .suggestions {
+    gap: 1rem;
+  }
+  .suggestions * {
+    margin: 0;
   }
 </style>
 
@@ -26,19 +50,22 @@ hero: /public/no-img.png
     <h1 class='postTitle'>{{title}}</h1>
 
     {{ content | safe }}
-    <div class="controls">
-      {% if prevPost.url %}
-        <p>
-          <strong>Previous post</strong>:
-          <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
-        </p>
-      {% endif %}
-      {% if nextPost.url %}
-        <p>
-          <strong>Next post</strong>:
-          <a class="next" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-        </p>
-      {% endif %}
-    </div>
+  </div>
+  <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
+    {% if prevPost.url %}
+      <h3>Previous post:</h3>
+      {% card prevPost.data.page.filePathStem %}
+    {% endif %}
+    {% if nextPost.url %}
+      <h3>Next post:</h3>
+      {% card nextPost.data.page.filePathStem %}
+    {% endif %}
+
+    {% if related.length > 1 %}
+      <h3>Related:</h3>
+    {% endif %}
+    {% for suggestion in related %}
+      {% card suggestion %}
+    {% endfor %}
   </div>
 </div>
