@@ -28,13 +28,13 @@ to this section's matching END comment to see page-specific styles.
 /* Import fonts */
 @font-face {
   font-family: HK Grotesk;
-  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+  src: url("/IMSAband/public/Grotesk-Regular.otf")
     format("opentype");
 }
 @font-face {
   font-family: HK Grotesk;
   font-weight: bold;
-  src: url("https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+  src: url("/IMSAband/public/Grotesk-Bold.otf")
     format("opentype");
 }
 
@@ -47,7 +47,7 @@ to this section's matching END comment to see page-specific styles.
 
 .footer a:link,
 .footer a:visited {
-  font-family: HK Grotesk;
+  font-family: HK Grotesk sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
