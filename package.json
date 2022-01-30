@@ -22,7 +22,7 @@
   "glitch": {
     "projectType": "generated_static"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "keywords": [
     "node",
     "glitch",
