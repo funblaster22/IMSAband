@@ -112,6 +112,7 @@
         padding: 0.5rem 1rem;
         text-decoration: none;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+        color: var(--color-text-main);
       }
       .collapse:not(.show) {
         display: none;
@@ -169,8 +170,32 @@
     line-height: 1.1;
     margin-bottom: 2rem;
   }
-  .controls {
-    margin: 3rem 0 2rem;
+
+  /* Preview Card styles */
+  @media (min-width: 768px) {
+    .wrapper {
+      flex-direction: row!important;
+      gap: 1em;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    border-radius: 2rem 2rem 0.5rem 0.5rem;
+    overflow: hidden;
+    max-width: 500px;
+    border: 1px solid var(--color-text-main);
+    background: var(--color-primary);
+    min-width: 220px;
+  }
+  .suggestions {
+    gap: 1rem;
+  }
+  .suggestions * {
+    margin: 0;
   }
 </style>
 
@@ -178,7 +203,7 @@
   <picture><source type="image/avif" srcset="/IMSAband/public/eiPAErk-Fn-1920.avif 1920w"><img alt="" loading="lazy" decoding="async" style="" class="parallax hero hero-sm" src="/IMSAband/public/eiPAErk-Fn-1920.jpeg" width="1920" height="1080"></picture>
 </div>
 <div class="wrapper post">
-  <div>
+  <div class="content">
     <h1 class='postTitle'>Pep Band is Starting!</h1>
 
     <p>IMSA band is excited to announce that the pep band season is now starting! Our Combined Concert Band and Wind Enable will be playing at Varsity Basketball games!
@@ -199,17 +224,25 @@ We are playing a variety of songs, like</p>
 <li>And others!</li>
 </ul>
 
-    <div class="controls">
+  </div>
+  <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
+    
+    
+      <h3>Next post:</h3>
       
-      
-        <p>
-          <strong>Next post</strong>:
-          <a class="next" href="/IMSAband/posts/new-website/">New Website!</a>
-        </p>
-      
-    </div>
+<a href="/IMSAband/posts/new-website"><div class="card">
+    <picture><source type="image/avif" srcset="/IMSAband/public/-RQ1Lb1Q8t-750.avif 750w"><img alt="" decoding="async" style="width: 100%; height: auto;" src="/IMSAband/public/-RQ1Lb1Q8t-750.jpeg" width="750" height="450"></picture>
+    <strong>New Website!</strong>
+    IMSA bands now have their own website!
+</div></a>
+
+    
+
+    
+    
   </div>
 </div>
+
 
     <footer class="footer">
       <picture><source type="image/avif" srcset="/IMSAband/public/YDagTvh999-1000.avif 1000w"><img alt="IMSA Titans logo" loading="lazy" decoding="async" style="max-width: 100%; object-fit: contain" class="" src="/IMSAband/public/YDagTvh999-1000.jpeg" width="1000" height="190"></picture>

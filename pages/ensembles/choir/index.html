@@ -112,6 +112,7 @@
         padding: 0.5rem 1rem;
         text-decoration: none;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+        color: var(--color-text-main);
       }
       .collapse:not(.show) {
         display: none;
@@ -160,11 +161,51 @@
     </nav>
 
     
+<style>
+  .post {
+    place-items: normal;
+  }
+  .postTitle {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  /* Preview Card styles */
+  @media (min-width: 768px) {
+    .wrapper {
+      flex-direction: row!important;
+      gap: 1em;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    border-radius: 2rem 2rem 0.5rem 0.5rem;
+    overflow: hidden;
+    max-width: 500px;
+    border: 1px solid var(--color-text-main);
+    background: var(--color-primary);
+    min-width: 220px;
+  }
+  .suggestions {
+    gap: 1rem;
+  }
+  .suggestions * {
+    margin: 0;
+  }
+</style>
+
 <div class="parallax-container">
   <picture><source type="image/avif" srcset="/IMSAband/public/hl9pJ1HHdf-1313.avif 1313w"><img alt="" loading="lazy" decoding="async" style="" class="parallax hero hero-sm" src="/IMSAband/public/hl9pJ1HHdf-1313.jpeg" width="1313" height="636"></picture>
 </div>
-<div class="wrapper">
+<div class="wrapper post">
   <div class="content">
+    <h1 class='postTitle'>Choir</h1>
+
     <p>Choir involves all things singing 🎤🧑‍🎤🎶.
 IMSA has two levels of choir, <em>Concert Choir</em> and <em>Chamber Choir</em>. The former accepts all students, while the latter requires an audition to get in.</p>
 <h3>Concert Choir</h3>
@@ -172,6 +213,13 @@ IMSA has two levels of choir, <em>Concert Choir</em> and <em>Chamber Choir</em>.
 <h3>Chamber Choir</h3>
 <p>List of students</p>
 
+  </div>
+  <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
+    
+    
+
+    
+    
   </div>
 </div>
 
