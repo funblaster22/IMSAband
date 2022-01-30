@@ -130,7 +130,6 @@ small,
 }
 ul > li,
 ol > li {
-  margin-bottom: 0.75rem;
   line-height: 1.5;
   font-size: 1rem;
 }
@@ -138,7 +137,7 @@ ul {
   padding: 0 0 0 18px;
   margin: 0;
 }
-ul.no-bullet {
+ul.reset, ol.reset {
   list-style-type: none;
 }
 
@@ -157,7 +156,7 @@ ul.no-bullet {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: HK Grotesk;
+  font-family: HK Grotesk sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 1.5;
@@ -166,49 +165,12 @@ ul.no-bullet {
   font-size: 56px;
 }
 
-/* Layout: Home */
-.home {
-  justify-content: left;
-}
-.illo-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.illustration {
-  max-width: 180px;
-  max-height: var(--image-max-width);
-  margin-top: 1rem;
-  margin-right: 2rem;
-  transform: rotate(16deg);
-}
-
-/* Post */
-.post {
-  place-items: normal;
-}
-.postTitle {
-  font-size: 4rem;
-  color: #000;
-  line-height: 1.1;
-  margin-bottom: 2rem;
-}
-.controls {
-  margin: 3rem 0 2rem;
-}
-
 /******************************************************************************
 START IMSA band styles
 ******************************************************************************/
 
 details {
   width: fit-content;
-}
-
-ul.reset, ol.reset {
-  list-style: none;
-}
-.reset li {
-  margin: 0;
 }
 
 .perfect-center {

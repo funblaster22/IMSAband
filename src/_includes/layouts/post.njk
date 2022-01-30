@@ -1,8 +1,22 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-home
+templateClass: tmpl-post
 hero: /public/no-img.png
 ---
+
+<style>
+  .post {
+    place-items: normal;
+  }
+  .postTitle {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+  .controls {
+    margin: 3rem 0 2rem;
+  }
+</style>
 
 <div class="hero hero-sm" style="background-image: url('{{ hero |url }}')"></div>
 <div class="wrapper post">
@@ -11,18 +25,18 @@ hero: /public/no-img.png
 
     {{ content | safe }}
     <div class="controls">
-    {% if prevPost.url %}
-      <p>
-        <strong>Previous post</strong>: 
-        <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
-      </p>
-    {% endif %}
-    {% if nextPost.url %}
-      <p>
-        <strong>Next post</strong>: 
-        <a class="next" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
-      </p>
+      {% if prevPost.url %}
+        <p>
+          <strong>Previous post</strong>:
+          <a class="previous" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+        </p>
+      {% endif %}
+      {% if nextPost.url %}
+        <p>
+          <strong>Next post</strong>:
+          <a class="next" href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+        </p>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
 </div>
