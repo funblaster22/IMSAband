@@ -57,11 +57,9 @@ templateClass: tmpl-home
             <h3>{{ post.data.description }}</h3>
             <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url | url }}'><button>Read More</button></a></div>
           </div>
-          <div class="parallax hero" style="background-image: url('{{ post.data.hero | url }}')"></div>
+          <div class="parallax hero" style="background-image: {{ post.data.hero | img }}"></div>
         </div>
       {% endif %}
     {%- endfor -%}
   </div>
 </div>
-
-
