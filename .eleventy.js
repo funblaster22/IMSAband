@@ -2,8 +2,19 @@ const { DateTime } = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
 const Image = require("@11ty/eleventy-img");
 const path = require('path');
+const fs = require('fs')
+const matter = require('gray-matter');
 
-const pathPrefix = "/IMSAband";
+const config = {
+  markdownTemplateEngine: "njk",
+  pathPrefix: "/IMSAband",
+  dir: {
+    input: "src",
+    includes: "_includes",
+    output: "build"
+  }
+};
+
 /** Returns a promise if async=true or an object if async=false */
 function convertImg(src, {sizes=[], async=true}={}) {
   const imgDir = path.parse(src).dir;
@@ -13,8 +24,16 @@ function convertImg(src, {sizes=[], async=true}={}) {
     //widths,
     formats: ["jpeg", "avif"],
     outputDir: path.join('build', imgDir),
-    urlPath: path.join(pathPrefix, imgDir),
+    urlPath: path.join(config.pathPrefix, imgDir),
   });
+}
+
+/* Adapted from https://stackoverflow.com/a/67746326 */
+function getPageData(input) {
+  // TODO: this works in markdown, but not in config file :(
+  // {{ (collections.all | getCollectionItem({ inputPath: './src/pages/ensembles/band.md', outputPath: 'build/pages/ensembles/band/index.html' } )).url | log }}
+  const str = fs.readFileSync(input, 'utf8');
+  return matter(str).data;
 }
 
 module.exports = function(eleventyConfig) {
@@ -57,6 +76,10 @@ module.exports = function(eleventyConfig) {
     const test = picture.map(img => `url('${img?.source?.srcset || img.img.src}') type('${img?.source?.type || 'image/jpeg'}')`);
 
     return "-webkit-image-set(" + test.join(',') + ")";
+  });
+
+  eleventyConfig.addNunjucksFilter("pageData", url => {
+    return getPageData('./src' + url);
   });
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
@@ -110,13 +133,5 @@ module.exports = function(eleventyConfig) {
   });
   // endregion
 
-  return {
-    markdownTemplateEngine: "njk",
-    pathPrefix,
-    dir: {
-      input: "src",
-      includes: "_includes",
-      output: "build"
-    }
-  };
+  return config;
 };

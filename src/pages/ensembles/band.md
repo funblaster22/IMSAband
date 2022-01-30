@@ -158,5 +158,6 @@ Nomar Martin
 {% endinstrument %}
 
 ### Pep Band
-All and students are required to participate in the [pep band]({{ '/posts/pep-band' | url }}), which (TODO: description).
-TODO: link to post with preview.
+All and students are required to participate in the [pep band]({{ '/posts/pep-band' | url }}), which plays at varsity basketball games.
+{{ ('/posts/pep-band.md' | pageData).description }}
+{# TODO: link to post with preview. #}

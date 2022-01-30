@@ -6,13 +6,11 @@
     "start": "eleventy --serve",
     "build": "NODE_ENV=production eleventy"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^1.0.0",
     "eleventy-plugin-seo": "^0.5.1",
+    "gray-matter": "^4.0.3",
     "luxon": "^1.26.0"
   },
   "engines": {
