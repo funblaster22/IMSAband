@@ -24,6 +24,12 @@ to this section's matching END comment to see page-specific styles.
 [hidden] {
   display: none !important;
 }
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 
 /* Import fonts */
 @font-face {
