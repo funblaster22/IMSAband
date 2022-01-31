@@ -10,6 +10,11 @@ templateClass: tmpl-posts
     <p>{{ description }}</p>
   </div>
   <div style="display: flex; gap: 1em; flex-wrap: wrap">
-    {{ content | safe }}
+    {% for post in collections[collection] %}
+      {% if post.url != page.url %}
+        {{ post.data.page | log }}
+        {% card post.data.page %}
+      {% endif %}
+    {% endfor %}
   </div>
 </div>

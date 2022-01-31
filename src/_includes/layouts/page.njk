@@ -47,18 +47,18 @@ hero: /public/no-img.png
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
     {% if prevPost.url %}
       <h3>Previous post:</h3>
-      {% card prevPost.data.page.filePathStem %}
+      {% card prevPost.data.page %}
     {% endif %}
     {% if nextPost.url %}
       <h3>Next post:</h3>
-      {% card nextPost.data.page.filePathStem %}
+      {% card nextPost.data.page %}
     {% endif %}
 
     {% if related.length > 1 %}
       <h3>Related:</h3>
     {% endif %}
     {% for suggestion in related %}
-      {% card suggestion %}
+      {% card { inputPath: "./src/" + suggestion + ".md", url: suggestion } %}
     {% endfor %}
   </div>
 </div>

@@ -17,6 +17,7 @@ const config = {
 
 /** Returns a promise if async=true or an object if async=false */
 function convertImg(src, {sizes=[], async=true}={}) {
+  src = src  || "/public/no-img.png";
   const imgDir = path.parse(src).dir;
   // 11ty image does not support absolute file paths because it thinks they are URLs
   // Currently, any images have to go into the src/public directory
@@ -104,8 +105,8 @@ module.exports = function(eleventyConfig) {
   });
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addNunjucksShortcode("card", function(url) {
-    const data = getPageData("./src/" + url + ".md");
+  eleventyConfig.addNunjucksShortcode("card", function({inputPath, url}) {
+    const data = getPageData(inputPath);
     const imgMetadata = convertImg(data.hero || "/public/no-img.png", {async: false});
     const img = Image.generateHTML(imgMetadata, {
       alt: "",
