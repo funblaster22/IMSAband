@@ -21,12 +21,17 @@ function convertImg(src, {sizes=[], async=true}={}) {
   const imgDir = path.parse(src).dir;
   // 11ty image does not support absolute file paths because it thinks they are URLs
   // Currently, any images have to go into the src/public directory
-  return (async ? Image : Image.statsSync)(path.join('src', src), {
-    //widths,
-    formats: ["jpeg", "avif"],
-    outputDir: path.join('build', imgDir),
-    urlPath: path.join(config.pathPrefix, imgDir),
-  });
+  try {
+    return (async ? Image : Image.statsSync)(path.join('src', src), {
+      //widths,
+      formats: ["jpeg", "avif"],
+      outputDir: path.join('build', imgDir),
+      urlPath: path.join(config.pathPrefix, imgDir),
+    });
+  }  catch {
+    console.error("Image", src, "not found");
+    return {jpeg: [ {} ]};
+  }
 }
 
 /* Adapted from https://stackoverflow.com/a/67746326 */
