@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-media
+---
+
+<style>
+  #photos {
+    margin: 0; /* Remove spacing between edges */
+    padding: 3em 0 0 5px;
+    border: 0;
+  }
+
+  img {
+    margin-right: 5px;
+  }
+</style>
+<script src="{{ '/public/gallery.js' | url }}"></script>
+<div id="photos">
+  {{ content | safe }}
+</div>
