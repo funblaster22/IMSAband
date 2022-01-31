@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: layouts/home.njk
+description: Home of the IMSA Titans!
 hero: public/concert-band.png
 ---
 

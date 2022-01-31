@@ -106,7 +106,6 @@ module.exports = function(eleventyConfig) {
   // region Nunjucks Shortcodes
   eleventyConfig.addNunjucksShortcode("card", function(url) {
     const data = getPageData("./src/" + url + ".md");
-    console.log(url, data);
     const imgMetadata = convertImg(data.hero || "/public/no-img.png", {async: false});
     const img = Image.generateHTML(imgMetadata, {
       alt: "",

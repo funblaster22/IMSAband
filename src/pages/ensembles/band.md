@@ -1,6 +1,7 @@
 ---
 title: Band
 description: IMSA's concert band, wind ensemble, and others
+hero: /public/wind-ensemble.png
 related:
     - /posts/pep-band
     - /pages/ensembles/orchestra

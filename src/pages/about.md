@@ -1,5 +1,8 @@
 ---
 title: About
+description: Get to know the band director
+related:
+    - /posts/new-website
 ---
 
 ## About this site

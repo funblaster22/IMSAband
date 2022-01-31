@@ -1,6 +1,7 @@
 ---
 title: Orchestra
 description: IMSA's concert orchestra, chamber strings, and others
+hero: /public/chamber-strings.png
 ---
 
 Orchestra is comprised of all string players without the burden of wind players. That would be violins, violas, cellos, and bass.
