@@ -1,8 +1,11 @@
 const { DateTime } = require("luxon");
 const pluginSEO = require("eleventy-plugin-seo");
+const purgeCssPlugin = require("eleventy-plugin-purgecss");
+const htmlmin = require("html-minifier");
+const glob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
 const matter = require('gray-matter');
 
 const config = {
@@ -71,6 +74,35 @@ module.exports = function(eleventyConfig) {
     seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
   }
   eleventyConfig.addPlugin(pluginSEO, seo);
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addPlugin(purgeCssPlugin, {
+      config: {
+        // Content files referencing CSS classes
+        content: [`./${config.dir.output}/**/*.html`],
+
+        // CSS files to be purged in-place
+        // TODO: filter inline <style> tags
+        css: [`./${config.dir.output}/**/*.css`],
+      }
+    });
+    eleventyConfig.on('eleventy.after', async () => {
+      // Runs after the build ends
+      // TODO: UglifyJS (used by html-minifier) doesn't support ES6, add beck when that is fixed
+      for await (const outputPath of glob.stream(config.dir.output + "/**/*.{css,html}")) {
+        console.log("Minifying", outputPath);
+        const content = await fs.promises.readFile(outputPath, 'utf-8');
+        const min = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
+        }).replace(/\/\*[^*]*\*+([^/*][^*]*\*+)*\//g, '');
+        // Replace CSS comments because for some reason html-minify doesn't handle that TODO: check back later
+        await fs.promises.writeFile(outputPath, min);
+      }
+    });
+  }
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
