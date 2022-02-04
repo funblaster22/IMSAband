@@ -19,6 +19,3 @@ She has, among many accomplishments,
 - Conductor and Artistic Director of the Fox Valley Festival Chorus
 - Graduated from Northwestern University
 </div>
-
-### Ms. Brown
-Ms. Maria Brown is the choir teacher at IMSA
