@@ -19,3 +19,11 @@ She has, among many accomplishments,
 - Conductor and Artistic Director of the Fox Valley Festival Chorus
 - Graduated from Northwestern University
 </div>
+
+<!-- TODO: https://11ty.rocks/eleventyjs/slugs-anchors/ -->
+### Student Credits
+- Ethan Dawes: Programmer
+- Ebba Kaulas: Logo designer
+- Jeremy Stark: Project Coordinator
+- Cole Plepel: Design prototyping
+- Christian Cline: Photos

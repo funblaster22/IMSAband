@@ -5,7 +5,7 @@ date: 2022-01-23
 hero: /public/new-site.jpg
 ---
 
-Hooray! IMSA bands now have their own website! Thanks to a collaboration between Ethan, Cole, and Jeramey, the new site
+Hooray! IMSA bands now have their own website! Thanks to a [collaboration between students]({{ '/pages/about/#student-credits' | url }}), the new site
 is now up and running! The code is even [open source](https://opensource.com/resources/what-open-source)
 under the [GPL v3 license](https://www.gnu.org/licenses/gpl-3.0.en.html),  so any IMSA student can take a look and improve it!
 The code is hosted on [GitHub](https://github.com/funblaster22/IMSAband), a collaboration platform.

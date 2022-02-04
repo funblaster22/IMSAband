@@ -87,3 +87,6 @@ Isabel Chen
 Daniel Park
 Antonio Gasse
 {% endinstrument %}
+
+### Strolling Strings
+The Strolling Strings is a music group that plays at extracurricular events and outside of classes.

@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; connect-src https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' *; font-src 'self';">
+    {% if eleventy.env.NODE_ENV == "production"  %}
+      <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; connect-src https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' *; font-src 'self';">
+    {% endif %}
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="{{ '/public/style.css' | url }}" />
@@ -110,6 +112,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100%;
+        line-height: normal;
       }
     </style>
   </head>
@@ -117,7 +120,7 @@
     <nav class="navbar navbar-expand-md navbar-dark">
       <a href="{{ '/' | url }}" class="navbar-brand">{% img '/public/bandlogo.png', "IMSA band logo" %}</a>
       <a href="{{ ('/' if page.url == '/pages/' else '/pages') | url }}"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">🍔</span>
+        <span class="navbar-toggler-icon">☰</span>
       </button></a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">

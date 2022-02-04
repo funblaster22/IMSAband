@@ -12,7 +12,6 @@ templateClass: tmpl-posts
   <div style="display: flex; gap: 1em; flex-wrap: wrap">
     {% for post in collections[collection] %}
       {% if post.url != page.url %}
-        {{ post.data.page | log }}
         {% card post.data.page %}
       {% endif %}
     {% endfor %}
