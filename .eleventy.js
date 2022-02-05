@@ -87,7 +87,7 @@ module.exports = function(eleventyConfig) {
     });
     eleventyConfig.on('eleventy.after', async () => {
       // Runs after the build ends
-      // TODO: UglifyJS (used by html-minifier) doesn't support ES6, add beck when that is fixed
+      // TODO: UglifyJS (used by html-minifier) doesn't support ES6, add back when that is fixed
       for await (const outputPath of glob.stream(config.dir.output + "/**/*.{css,html}")) {
         console.log("Minifying", outputPath);
         const content = await fs.promises.readFile(outputPath, 'utf-8');
@@ -148,7 +148,6 @@ module.exports = function(eleventyConfig) {
     const img = Image.generateHTML(imgMetadata, {
       alt: "",
       decoding: "async",
-      style: "width: 100%; height: auto;"
     });
     return `
 <a href="${path.join(config.pathPrefix, url)}"><div class="card">
