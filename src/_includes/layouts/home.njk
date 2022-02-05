@@ -20,7 +20,7 @@ templateClass: tmpl-home
     <h1>Home of the IMSA musicians!</h1>
   </div>
   <div>
-    {%- for post in collections.posts.reverse() -%}
+    {% for post in collections.posts.reverse() %}
       {% if (loop.index <= 5 and page.url != post.url) %}
         {# TODO: would be cool if I could apply inset box shadows (currently the image covers them up) #}
         <div class="parallax-container perfect-center" style="height: 100vh;">
@@ -32,6 +32,6 @@ templateClass: tmpl-home
           {% img post.data.hero, "", {className: "parallax hero"} %}
         </div>
       {% endif %}
-    {%- endfor -%}
+    {% endfor %}
   </div>
 </div>

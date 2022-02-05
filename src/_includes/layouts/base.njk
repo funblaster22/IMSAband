@@ -119,16 +119,16 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark">
       <a href="{{ '/' | url }}" class="navbar-brand">{% img '/public/bandlogo.png', "IMSA band logo" %}</a>
-      <a href="{{ ('/' if page.url == '/pages/' else '/pages') | url }}"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="{{ ('javascript:history.back()' if page.url == '/pages/' else '/pages/') | url }}"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">☰</span>
       </button></a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          {%- for navPage in collections.pages -%}
+          {% for navPage in collections.pages %}
             <li class="nav-item" {% if page.url == navPage.url %} aria-current="page"{% endif %}>
               <a href="{{ navPage.url | url }}" class="nav-link">{{ navPage.data.title }}</a>
             </li>
-          {%- endfor -%}
+          {% endfor %}
           <li class="nav-item social">
             <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank" rel="noopener noreferrer"><img src="{{ '/public/youtube.svg' | url }}"></a>
             <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank" rel="noopener noreferrer"><img src="{{ '/public/facebook.svg' | url }}"></a>
