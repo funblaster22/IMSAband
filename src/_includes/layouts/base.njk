@@ -63,6 +63,8 @@
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         z-index: 1;
+        background: rgba(0, 0,0, 0.5);
+        width: 100vw;
       }
       .navbar-brand {
         padding-top: 0.3125rem;
@@ -95,6 +97,7 @@
         text-decoration: none;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
         color: var(--color-text-main);
+        font-size: 15pt;
       }
       .collapse:not(.show) {
         display: none;
@@ -118,7 +121,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="{{ '/' | url }}" class="navbar-brand">{% img '/public/bandlogo.png', "IMSA band logo" %}</a>
+      <a href="{{ '/' | url }}">{% img '/public/logo.png', "IMSA band logo", {style: 'height: 3em; width: auto;'} %}</a>
       <a href="{{ ('javascript:history.back()' if page.url == '/pages/' else '/pages/') | url }}"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">☰</span>
       </button></a>
