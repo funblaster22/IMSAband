@@ -178,7 +178,7 @@ module.exports = function(eleventyConfig) {
     return `
 <details>
   <summary>${instrument}</summary>
-  <ul class="reset">${items}</ul>
+  <ul class="reset" style="margin-block-end: 1em;">${items}</ul>
 </details>`;
   });
   // endregion
