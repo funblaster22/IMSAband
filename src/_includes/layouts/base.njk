@@ -120,6 +120,7 @@
     </style>
   </head>
   <body>
+    <a class="skip-to-content" href="#main">Skip to content</a>
     <nav class="navbar navbar-expand-md navbar-dark">
       <a href="{{ '/' | url }}">{% img '/public/logo.png', "IMSA band logo", {style: 'height: 3em; width: auto;'} %}</a>
       <a href="{{ ('javascript:history.back()' if page.url == '/pages/' else '/pages/') | url }}"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +143,10 @@
       </div>
     </nav>
 
-    {{ content | safe }}
+    <a name="main"></a>
+    <main>
+        {{ content | safe }}
+    </main>
 
     <footer class="footer">
       {% img '/public/titans.jpg', 'IMSA Titans logo', {style: 'max-width: 100%; object-fit: contain'} %}
