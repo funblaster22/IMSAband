@@ -161,7 +161,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", className="", sizes=[]}={}) {
     const metadata = await convertImg(src, {sizes});
 
-    return Image.generateHTML(metadata, {
+    return `<!-- Image source: ./src${src} --> ` + Image.generateHTML(metadata, {
       alt: alt,
       loading: "lazy",
       decoding: "async",
