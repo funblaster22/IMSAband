@@ -9,7 +9,7 @@ templateClass: tmpl-posts
     <h2>{{ title }}</h2>
     <p>{{ description }}</p>
   </div>
-  <div style="display: flex; gap: 1em; flex-wrap: wrap">
+  <div class="postContainer">
     {% for post in collections[collection] %}
       {% if post.url != page.url %}
         {% card post.data.page %}
@@ -17,3 +17,14 @@ templateClass: tmpl-posts
     {% endfor %}
   </div>
 </div>
+
+<style>
+/* Big thanks to https://stackoverflow.com/a/60870221 */
+.postContainer {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(320px, max-content));
+    padding: initial;
+    justify-content: center;
+}
+</style>
