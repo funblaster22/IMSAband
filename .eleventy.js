@@ -8,6 +8,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const path = require('path');
 const fs = require('fs');
 const matter = require('gray-matter');
+const urlLib = require("url");
 
 const config = {
   markdownTemplateEngine: "njk",
@@ -29,7 +30,7 @@ function convertImg(src, {sizes=[], async=true}={}) {
     return (async ? Image : Image.statsSync)(path.join('src', src), {
       //widths,
       formats: ["jpeg", "avif"],
-      outputDir: path.join('build', imgDir),
+      outputDir: path.join(config.dir.output, imgDir),
       urlPath: path.join(config.pathPrefix, imgDir),
     });
   }  catch {
@@ -144,9 +145,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addNunjucksShortcode("card", function({inputPath, url}) {
+  eleventyConfig.addNunjucksAsyncShortcode("card", async function({inputPath, url}) {
     const data = getPageData(inputPath);
-    const imgMetadata = convertImg(data.hero || "/public/no-img.png", {async: false});
+    // I know resolve is depreciated, but it is the only way that allows incomplete URLS (eg. using /pages/about as base)
+    const imgSrc = urlLib.resolve(url, data.hero || "/public/no-img.png");
+    const imgMetadata = await convertImg(imgSrc);
+    console.log(imgMetadata)
     const img = Image.generateHTML(imgMetadata, {
       alt: "",
       decoding: "async",
