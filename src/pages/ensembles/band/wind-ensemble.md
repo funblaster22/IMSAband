@@ -1,7 +1,7 @@
 ---
 title: Concert Band
 description: IMSA's 2nd-level audition band
-hero: /public/concert-band.png
+hero: /public/wind-ensemble.png
 eleventyNavigation:
     key: Wind Ensemble
     parent: Band
