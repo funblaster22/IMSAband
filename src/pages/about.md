@@ -3,6 +3,9 @@ title: About
 description: Get to know the band director
 related:
     - /posts/new-website
+eleventyNavigation:
+    key: About
+    order: 100
 ---
 
 ### Ms. McCarthy

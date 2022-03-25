@@ -4,6 +4,7 @@ const purgeCssPlugin = require("eleventy-plugin-purgecss");
 const htmlmin = require("html-minifier");
 const glob = require("fast-glob");
 const Image = require("@11ty/eleventy-img");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const path = require('path');
 const fs = require('fs');
 const matter = require('gray-matter');
@@ -74,6 +75,7 @@ module.exports = function(eleventyConfig) {
     seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
   }
   eleventyConfig.addPlugin(pluginSEO, seo);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
   if (process.env.NODE_ENV === "production") {
     eleventyConfig.addPlugin(purgeCssPlugin, {
       config: {
@@ -171,7 +173,6 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {
-    instrument = instrument.charAt(0).toUpperCase() + instrument.substring(1).toLowerCase();
     const items = content.replace(/^\*\*/gm, '<abbr title="Concert Master">**</abbr> ')
         .replace(/^\*(?!\*)/gm, '<abbr title="Section Leader">*</abbr> ')
         .replace(/\n/g, "</li><li>");

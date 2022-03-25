@@ -2,6 +2,8 @@
 title: Orchestra
 description: IMSA's concert orchestra, chamber strings, and others
 hero: /public/chamber-strings.png
+eleventyNavigation:
+    key: Orchestra
 ---
 
 Orchestra is comprised of all string players without the burden of wind players. That would be violins, violas, cellos, and bass.
@@ -11,7 +13,7 @@ IMSA has two levels of choir, _String Orchestra_ and _Chamber Strings_. The form
 \** = Concert Master
 
 ### String Orchestra
-{% instrument "VIOLIN I" %}
+{% instrument "Violin I" %}
 **Brooks Sonethongkham
 *Aashima Singh Sisodia
 Ryan Li
@@ -19,7 +21,7 @@ Blessita Charly
 Iris Amit
 {% endinstrument %}
 
-{% instrument "VIOLIN II" %}
+{% instrument "Violin II" %}
 Dhaatri Maviti
 *Malcolm Wilson-Ahlstrom
 Diya Kamath
@@ -33,12 +35,12 @@ Jacie Cox
 Wyatt Bryant
 {% endinstrument %}
 
-{% instrument "VIOLA" %}
+{% instrument "Viola" %}
 *Shreevardhan Atyam
 *Vikram Rao
 {% endinstrument %}
 
-{% instrument "CELLO" %}
+{% instrument "Cello" %}
 *Annabelle Zhang
 *Emma Lau
 Avyay Duggirala
@@ -47,7 +49,7 @@ Fiona Kriner
 
 
 ### Chamber Strings
-{% instrument "VIOLIN I" %}
+{% instrument "Violin I" %}
 **Minseo Emily Jung
 *Sooah Irene Park
 Rebeca Pae
@@ -58,7 +60,7 @@ Sameer Komoravolu
 Ariela Asilani
 {% endinstrument %}
 
-{% instrument "VIOLIN II" %}
+{% instrument "Violin II" %}
 *Rachel Selveraj
 Naveena Muthrasen
 JaeJun Park
@@ -72,14 +74,14 @@ Mridhul Payyan Valappil
 Haley Rodriguez
 {% endinstrument %}
 
-{% instrument "VIOLA" %}
+{% instrument "Viola" %}
 *Shiqi Cheng
 *Thomas Johnson
 Frederick Meents IV
 William Yang
 {% endinstrument %}
 
-{% instrument "CELLO" %}
+{% instrument "Cello" %}
 *Minju Cindy Oh
 Jason Qin
 Natalie Hulseberg
