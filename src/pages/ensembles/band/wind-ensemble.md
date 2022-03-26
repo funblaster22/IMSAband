@@ -1,5 +1,5 @@
 ---
-title: Concert Band
+title: Wind Ensemble
 description: IMSA's 2nd-level audition band
 hero: /public/wind-ensemble.png
 eleventyNavigation:
