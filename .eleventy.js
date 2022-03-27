@@ -144,6 +144,11 @@ module.exports = function(eleventyConfig) {
     return coll;
   });
 
+  // Automatically generates index pages for broad topics like /band by flattening navigation
+  /*eleventyConfig.addCollection("doublePagination", function(collection) {
+
+  });*/
+
   // region Nunjucks Shortcodes
   eleventyConfig.addNunjucksAsyncShortcode("card", async function({inputPath, url}) {
     const data = getPageData(inputPath);
@@ -159,7 +164,7 @@ module.exports = function(eleventyConfig) {
 <a href="${path.join(config.pathPrefix, url)}"><div class="card">
     ${img}
     <strong>${data.title}</strong>
-    ${data.description}
+    ${data.description || ""}
 </div></a>
 `;
   });

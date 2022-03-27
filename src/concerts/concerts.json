@@ -1,0 +1,4 @@
+{
+  "tags": ["concerts", "posts"],
+  "layout": "layouts/page.njk"
+}

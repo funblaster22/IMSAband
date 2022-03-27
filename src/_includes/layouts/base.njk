@@ -141,7 +141,7 @@
           listItemHasChildrenClass: "dropdown"
         }) | safe }#}
         <ul class="navbar-nav">
-          {% set navPages = collections.pages | eleventyNavigation %}
+          {% set navPages = collections.all | eleventyNavigation %}
           {% for navPage in navPages %}
             <li class="nav-item" {% if page.url == navPage.url %} aria-current="page"{% endif %}>
               <a href="{{ navPage.url | url }}" class="nav-link">{{ navPage.title or navPage.key }}</a>
