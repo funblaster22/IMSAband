@@ -7,7 +7,7 @@
     {% if eleventy.env.NODE_ENV == "production"  %}
       <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; connect-src https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' *; font-src 'self';">
     {% endif %}
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="icon" href="{{ '/public/favicon.png' | url }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {#
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" defer></script>
@@ -16,6 +16,13 @@
     <link rel="stylesheet" type="text/css" href="{{ '/public/style.css' | url }}" />
     {# Global site tag (gtag.js) - Google Analytics #}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPWGF8HK8P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-LPWGF8HK8P');
+    </script>
     <script src="{{ '/public/global.js' | url }}"></script>
     {% seo "" %}
     <style>
@@ -129,7 +136,7 @@
   <body>
     <a class="skip-to-content" href="#main">Skip to content</a>
     <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="{{ '/' | url }}">{% img '/public/logo.png', "IMSA band logo", {style: 'height: 3em; width: auto;'} %}</a>
+      <a href="{{ '/' | url }}"><img src="{{ '/public/favicon.png' | url }}" alt="IMSA band logo" style="height: 3em; width: auto;" /></a>
       <a href="{{ ('javascript:history.back()' if page.url == '/pages/' else '/pages/') | url }}" class="navbar-toggler">
         <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">☰</span>

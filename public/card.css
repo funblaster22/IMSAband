@@ -6,6 +6,12 @@
   background: var(--color-primary);
   min-width: 220px;
   height: 100%;
+  transition: box-shadow 200ms;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 10px 0px black;
+
 }
 
 .card img {

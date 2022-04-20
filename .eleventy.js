@@ -107,9 +107,10 @@ module.exports = function(eleventyConfig) {
     });
   }
 
-  eleventyConfig.addFilter("htmlDateString", dateObj => {
+  function htmlDateString(dateObj) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
-  });
+  }
+  eleventyConfig.addFilter("htmlDateString", htmlDateString);
   // for some reason, async filters cause 11ty to quit without errors TODO: stay tuned to future updates
   eleventyConfig.addNunjucksFilter("img", src => {
     const metadata = convertImg(src, {async: false});
@@ -166,6 +167,7 @@ module.exports = function(eleventyConfig) {
     return `
 <a href="${path.join(config.pathPrefix, url)}"><div class="card">
     ${img}
+    <em>${data.date ? htmlDateString(data.date) : ""}</em>
     <strong>${data.title}</strong>
     ${data.description || ""}
 </div></a>
