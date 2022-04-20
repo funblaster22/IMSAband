@@ -5,7 +5,7 @@ related:
     - /posts/new-website
 eleventyNavigation:
     key: About
-    order: 100
+    order: 50
 ---
 
 ### Ms. McCarthy
@@ -15,11 +15,11 @@ Mary Beth McCarthy is the director for band and orchestra at IMSA. Her passion f
 She has, among many accomplishments,
 
 - Sang with the Lincoln Opera Company
-- Revitalized the Aurora University Music Program
+- Revitalized the Aurora University music program
 - Competed in the International Bel Canto competition
-- Received multiple _Who's Who Among American Teachers'_ Awards
-- Developed an Instrumental Music Program at Rosary High School
-- Conductor and Artistic Director of the Fox Valley Festival Chorus
+- Received multiple _Who's Who Among American Teachers'_ awards
+- Developed an instrumental music program at Rosary High School
+- Conductor and artistic director of the Fox Valley Festival Chorus
 - Graduated from Northwestern University
 </div>
 

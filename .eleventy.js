@@ -215,5 +215,8 @@ module.exports = function(eleventyConfig) {
     }
   });
 
+  // Considering something like https://github.com/11ty/eleventy/issues/332, but it was easier to make individual index files
+  // TODO: iterate through every page in the concerts folder, and add tags (each `ensembles` & `title` becomes its own collection)
+
   return config;
 };

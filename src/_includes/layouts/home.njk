@@ -16,9 +16,6 @@ templateClass: tmpl-home
 </style>
 
 <div class="home">
-  <div class="parallax-container perfect-center">
-    {% img '/public/logo.png', "", {className: "parallax hero hero-sm"} %}
-  </div>
   <div>
     {% for post in collections.posts.reverse() %}
       {% if (loop.index <= 5 and page.url != post.url) %}

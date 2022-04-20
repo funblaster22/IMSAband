@@ -2,7 +2,6 @@
 title: New Website!
 description: IMSA bands now have their own website!
 date: 2022-01-23
-hero: /public/new-site.jpg
 ---
 
 Hooray! IMSA bands now have their own website! Thanks to a [collaboration between students]({{ '/pages/about/#student-credits' | url }}), the new site

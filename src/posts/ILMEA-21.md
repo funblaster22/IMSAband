@@ -2,7 +2,6 @@
 title: ILMEA 2021
 description: Congratulations to everyone who participated in ILMEA!
 date: 2021-10-13
-hero: /public/ilmea.jpg
 ---
 
 Every year, the Illinois Music Education Association (ILMEA), holds auditions where musicians across the state audition
