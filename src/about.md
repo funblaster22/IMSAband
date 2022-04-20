@@ -1,6 +1,7 @@
 ---
 title: About
 description: Get to know the band director
+layout: layouts/page.njk
 related:
     - /posts/new-website
 eleventyNavigation:

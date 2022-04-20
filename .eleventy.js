@@ -147,6 +147,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("concerts", function(collection) {
     return collection.getFilteredByTag("concerts").reverse();
   });
+  eleventyConfig.addCollection("navigation", function(collection) {
+    // This is the stupidest, most verbose code I've ever written >:(
+    console.log(collection.getAll().filter(item => item.data.eleventyNavigation && item.data.title).map(item => item.data.title));
+    return collection.getAll()
+        .filter(item => item.data.eleventyNavigation && item.data.title && !item.data.eleventyNavigation.parent).sort((a, b) => (a.data.eleventyNavigation.order || 0) - (b.data.eleventyNavigation.order || 0));
+  });
 
   // Automatically generates index pages for broad topics like /band by flattening navigation
   /*eleventyConfig.addCollection("doublePagination", function(collection) {
@@ -159,7 +165,7 @@ module.exports = function(eleventyConfig) {
     // I know resolve is depreciated, but it is the only way that allows incomplete URLS (eg. using /pages/about as base)
     const imgSrc = urlLib.resolve(url, data.hero || "/public/no-img.png");
     const imgMetadata = await convertImg(imgSrc);
-    console.log(imgMetadata)
+    //console.log(imgMetadata)
     const img = Image.generateHTML(imgMetadata, {
       alt: "",
       decoding: "async",

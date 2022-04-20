@@ -50,7 +50,7 @@ hero: /public/no-img.png
       <h3>Performing Ensembles:</h3>
     {% endif %}
     {% for ensemble in ensembles %}
-      {% card { inputPath: "./src/pages/ensembles/" + ensemble + ".md", url: "/pages/ensembles/" + ensemble } %}
+      {% card { inputPath: "./src/ensembles/" + ensemble + ".md", url: "/ensembles/" + ensemble } %}
     {% endfor %}
 
     {% if prevPost.url %}
