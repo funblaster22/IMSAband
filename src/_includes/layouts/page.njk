@@ -46,6 +46,13 @@ hero: /public/no-img.png
     {{ content | safe }}
   </div>
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
+    {% if ensembles.length > 0 %}
+      <h3>Performing Ensembles:</h3>
+    {% endif %}
+    {% for ensemble in ensembles %}
+      {% card { inputPath: "./src/pages/ensembles/" + ensemble + ".md", url: "/pages/ensembles/" + ensemble } %}
+    {% endfor %}
+
     {% if prevPost.url %}
       <h3>Previous post:</h3>
       {% card prevPost.data.page %}
@@ -55,7 +62,7 @@ hero: /public/no-img.png
       {% card nextPost.data.page %}
     {% endif %}
 
-    {% if related.length > 1 %}
+    {% if related.length > 0 %}
       <h3>Related:</h3>
     {% endif %}
     {% for suggestion in related %}

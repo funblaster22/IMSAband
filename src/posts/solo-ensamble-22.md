@@ -2,6 +2,7 @@
 title: Solo & Ensemble 2022
 description: Congratulations to everyone who participated in Solo & Ensemble!
 date: 2022-03-05
+hero: /public/solo-ensemble.png
 ---
 
 Solo and Ensemble is a competition where students learn and play either a solo or ensemble piece to preform for a panel

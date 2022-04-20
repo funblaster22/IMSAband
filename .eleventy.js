@@ -143,6 +143,9 @@ module.exports = function(eleventyConfig) {
 
     return coll;
   });
+  eleventyConfig.addCollection("concerts", function(collection) {
+    return collection.getFilteredByTag("concerts").reverse();
+  });
 
   // Automatically generates index pages for broad topics like /band by flattening navigation
   /*eleventyConfig.addCollection("doublePagination", function(collection) {
