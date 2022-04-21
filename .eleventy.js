@@ -111,6 +111,9 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
   }
   eleventyConfig.addFilter("htmlDateString", htmlDateString);
+  eleventyConfig.addFilter("icalDateString", dateObj =>
+      DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyyLLdd'T'HHmmss'Z'")
+  );
   // for some reason, async filters cause 11ty to quit without errors TODO: stay tuned to future updates
   eleventyConfig.addNunjucksFilter("img", src => {
     const metadata = convertImg(src, {async: false});

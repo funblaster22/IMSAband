@@ -1,0 +1,13 @@
+---
+title: Calendar
+description: All Performances
+layout: layouts/base.njk
+hero: /public/calendar.webp
+eleventyNavigation:
+  key: Calendar
+  order: 110
+---
+
+<div style="height: 100px"></div>
+<p><a href="{{ '/ical.ics' | url }}" target="ical"><button>Download Calendar</button></a></p>
+<iframe id="preview" style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" src="https://openwebcalendar.herokuapp.com/calendar.html?url={{site.url}}{{ '/ical.ics' | url }}" sandbox="allow-scripts allow-same-origin allow-top-navigation" allowtransparency="true" scrolling="no" frameborder="0" height="600px" width="100%"></iframe>
