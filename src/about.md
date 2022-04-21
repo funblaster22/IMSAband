@@ -1,13 +1,4 @@
----
-title: About
-description: Get to know the band director
-layout: layouts/page.njk
-related:
-    - /posts/new-website
-eleventyNavigation:
-    key: About
-    order: 50
----
+
 
 ### Ms. McCarthy
 <div>

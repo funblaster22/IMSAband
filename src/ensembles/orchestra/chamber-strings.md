@@ -5,6 +5,7 @@ hero: /public/chamber-strings.png
 eleventyNavigation:
     key: Chamber Strings
     parent: Orchestra
+tags: Chamber Strings
 ---
 
 \* = Section Leader<br/>

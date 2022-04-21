@@ -5,5 +5,5 @@ layout: layouts/posts.njk
 eleventyNavigation:
     key: Concerts
 collection: concerts
-override:tags: concerts
+override:tags: [concerts]
 ---

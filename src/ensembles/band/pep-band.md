@@ -5,6 +5,7 @@ hero: /public/pep-band.jpg
 eleventyNavigation:
     key: Pep Band
     parent: Band
+tags: Pep Band
 ---
 
 {{ description }}

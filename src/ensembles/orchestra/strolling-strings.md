@@ -5,4 +5,5 @@ hero: /public/strolling-strings.png
 eleventyNavigation:
     key: Strolling Strings
     parent: Orchestra
+tags: Strolling Strings
 ---

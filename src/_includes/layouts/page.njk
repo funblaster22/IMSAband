@@ -46,12 +46,22 @@ hero: /public/no-img.png
     {{ content | safe }}
   </div>
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
-    {% if ensembles.length > 0 %}
+    {% if tags.includes("concerts") %}
       <h3>Performing Ensembles:</h3>
+      {% for tag in tags %}
+        {% for ensemble in collections.all | includesAllTags(tag, "ensembles") %}
+          {% card ensemble %}
+        {% endfor %}
+      {% endfor %}
     {% endif %}
-    {% for ensemble in ensembles %}
-      {% card { inputPath: "./src/ensembles/" + ensemble + ".md", url: "/ensembles/" + ensemble } %}
-    {% endfor %}
+
+    {% set concerts = collections.all | includesAllTags(title, "concerts") %}
+    {% if concerts.length > 0 %}
+      <h3>Concerts:</h3>
+      {% for concert in concerts %}
+        {% card concert %}
+      {% endfor %}
+    {% endif %}
 
     {% if prevPost.url %}
       <h3>Previous post:</h3>

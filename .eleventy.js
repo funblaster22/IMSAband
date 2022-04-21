@@ -123,6 +123,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksFilter("pageData", url => {
     return getPageData('./src' + url);
   });
+  eleventyConfig.addNunjucksFilter("includesAllTags", (arr, ...tags) => {
+    //console.log(arr.length, arr.map(page => page.data.tags || []));
+    return arr.filter(page => {
+      // Make sure that `tags` is an array, as that is not guaranteed
+      //console.log(page.data.title, page.data.tags || []);
+      return tags.every(tag => (page.data.tags || []).includes(tag));
+    });
+  });
   
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
   
@@ -149,9 +157,11 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addCollection("navigation", function(collection) {
     // This is the stupidest, most verbose code I've ever written >:(
-    console.log(collection.getAll().filter(item => item.data.eleventyNavigation && item.data.title).map(item => item.data.title));
-    return collection.getAll()
-        .filter(item => item.data.eleventyNavigation && item.data.title && !item.data.eleventyNavigation.parent).sort((a, b) => (a.data.eleventyNavigation.order || 0) - (b.data.eleventyNavigation.order || 0));
+    // TODO: include pages w/o permalink, like sightread.md
+    const navPages = collection.getAll()
+        .filter(item => item.data.eleventyNavigation && item.data.permalink && !item.data.eleventyNavigation.parent).sort((a, b) => (a.data.eleventyNavigation.order || 0) - (b.data.eleventyNavigation.order || 0));
+    //console.log(navPages.map(item => item.data.title));
+    return navPages;
   });
 
   // Automatically generates index pages for broad topics like /band by flattening navigation

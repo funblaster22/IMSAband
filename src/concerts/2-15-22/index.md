@@ -1,8 +1,8 @@
 ---
 title: Pep Band Game
 date: 2022-02-15
-ensembles:
-    - /band/pep-band
+tags:
+    - Pep Band
 hero: /public/pep-band.jpg
 ---
 

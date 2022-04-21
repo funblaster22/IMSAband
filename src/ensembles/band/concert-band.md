@@ -5,6 +5,7 @@ hero: /public/concert-band.png
 eleventyNavigation:
     key: Concert Band
     parent: Band
+tags: Concert Band
 ---
 
 \* = Section Leader

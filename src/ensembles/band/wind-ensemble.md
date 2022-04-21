@@ -5,6 +5,7 @@ hero: /public/wind-ensemble.png
 eleventyNavigation:
     key: Wind Ensemble
     parent: Band
+tags: Wind Ensemble
 ---
 
 \* = Section Leader
