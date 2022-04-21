@@ -159,7 +159,7 @@ module.exports = function(eleventyConfig) {
     // This is the stupidest, most verbose code I've ever written >:(
     // TODO: include pages w/o permalink, like sightread.md
     const navPages = collection.getAll()
-        .filter(item => item.data.eleventyNavigation && item.data.permalink && !item.data.eleventyNavigation.parent).sort((a, b) => (a.data.eleventyNavigation.order || 0) - (b.data.eleventyNavigation.order || 0));
+        .filter(item => item.data.eleventyNavigation && item.url && !item.data.eleventyNavigation.parent).sort((a, b) => (a.data.eleventyNavigation.order || 0) - (b.data.eleventyNavigation.order || 0));
     //console.log(navPages.map(item => item.data.title));
     return navPages;
   });
