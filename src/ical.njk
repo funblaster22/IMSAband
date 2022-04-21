@@ -1,0 +1,31 @@
+---
+permalink: /ical.ics
+eleventyExcludeFromCollections: true
+---
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//funblaster22//IMSA band//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+NAME:IMSA performances
+{#DESCRIPTION:A description of my calendar#}
+{% for event in collections.posts %}
+{% set url = site.url + (event.url | url) %}
+{% set date = event.data.date.getYear() + "0102T120000Z" %}
+BEGIN:VEVENT
+SUMMARY:{{event.data.title}}
+UID:{{ url }}
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+DTSTART:{{ date }}
+DTEND:{{ date }}
+DTSTAMP:{{ date }}
+CATEGORIES:{{ event.data.tags.join(",") }}
+LOCATION:Illinois Mathematics and Science Academy
+{#GEO:37.5739497;-85.7399606#}
+DESCRIPTION:{{event.data.description}}\n\n{{url}}
+URL:{{ url }}
+END:VEVENT
+{% endfor %}
+END:VCALENDAR
