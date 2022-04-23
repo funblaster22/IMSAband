@@ -122,6 +122,10 @@ module.exports = function(eleventyConfig) {
 
     return "-webkit-image-set(" + test.join(',') + ")";
   });
+  eleventyConfig.addNunjucksFilter("imgJpg", src => {
+    const metadata = convertImg(src, {async: false});
+    return metadata.jpeg[0].url;
+  });
 
   eleventyConfig.addNunjucksFilter("pageData", url => {
     return getPageData('./src' + url);

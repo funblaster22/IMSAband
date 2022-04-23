@@ -1,3 +1,13 @@
+---
+# Docs: https://www.11ty.dev/docs/data-computed/, https://github.com/11ty/eleventy/issues/216#issuecomment-629913823
+# TODO: rename all internal uses of `hero` and `description` to `image` and `excerpt`
+# Quotes are VERY important
+hero: /public/logo.png
+eleventyComputed:
+  image: "{{ site.url }}{{ hero | imgJpg }}"
+  excerpt: "{{ description }}"
+---
+
 <!-- Source: {{ page.inputPath }} -->
 <!-- base -->
 <!DOCTYPE html>
