@@ -36,8 +36,16 @@ eleventyComputed:
     <script src="{{ '/public/global.js' | url }}"></script>
     {% seo "" %}
     <style>
+      .social {
+        display: flex;
+      }
       .social img {
         height: 1em;
+      }
+      .social a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .footer {
