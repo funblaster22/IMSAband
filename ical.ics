@@ -46,7 +46,7 @@ END:VEVENT
 
 BEGIN:VEVENT
 SUMMARY:Pep Band Game
-UID:/concerts/2-15-22/
+UID:/concerts/pep-band/2022-02-15/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -55,9 +55,9 @@ DTEND:20220215T000000Z
 DTSTAMP:20220215T000000Z
 CATEGORIES:concerts,posts,Pep Band
 
-DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/2-15-22/
+DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pep-band/2022-02-15/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/2-15-22/
+URL:https://funblaster22.github.io/IMSAband/concerts/pep-band/2022-02-15/
 END:VEVENT
 
 
@@ -82,7 +82,7 @@ END:VEVENT
 
 BEGIN:VEVENT
 SUMMARY:Pop Concert
-UID:/concerts/4-1-22/
+UID:/concerts/pop-concert/22/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -91,9 +91,9 @@ DTEND:20220401T000000Z
 DTSTAMP:20220401T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band
 
-DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/4-1-22/
+DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pop-concert/22/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/4-1-22/
+URL:https://funblaster22.github.io/IMSAband/concerts/pop-concert/22/
 END:VEVENT
 
 END:VCALENDAR
