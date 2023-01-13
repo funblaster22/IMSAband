@@ -1,0 +1,8 @@
+{% macro card(pageData) %}
+<a href="{{ pageData.page.url | url }}"><div class="card">
+  {% img pageData.hero %}
+  {% if pageData.date %}<em>{{pageData.date | htmlDateString}}</em>{% endif %}
+  <strong>{{pageData.title}}</strong>
+  {{pageData.description}}
+</div></a>
+{% endmacro %}

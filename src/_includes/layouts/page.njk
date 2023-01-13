@@ -45,12 +45,14 @@ hero: /public/no-img.png
 
     {{ content | safe }}
   </div>
+  {% from "_components/card.njk" import card %}
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
-    {% if tags.includes("concerts") %}
+    {% set ensembles = collections.all | includesAllTags(tag, "ensembles") %}
+    {% if ensembles.length > 0 %}
       <h3>Performing Ensembles:</h3>
       {% for tag in tags %}
-        {% for ensemble in collections.all | includesAllTags(tag, "ensembles") %}
-          {% card ensemble %}
+        {% for ensemble in ensembles %}
+          {{ card(ensemble.data) }}
         {% endfor %}
       {% endfor %}
     {% endif %}
@@ -59,25 +61,31 @@ hero: /public/no-img.png
     {% if concerts.length > 0 %}
       <h3>Concerts:</h3>
       {% for concert in concerts %}
-        {% card concert %}
+        {{ card(concert.data) }}
       {% endfor %}
     {% endif %}
 
     {% if prevPost.url %}
       <h3>Previous post:</h3>
-      {% card prevPost.data.page %}
+      {{ card(prevPost.data) }}
     {% endif %}
     {% if nextPost.url %}
       <h3>Next post:</h3>
-      {% card nextPost.data.page %}
+      {{ card(nextPost.data) }}
     {% endif %}
 
+    {# TODO: I have no clue where related is coming from #}
     {% if related.length > 0 %}
       <h3>Related:</h3>
     {% endif %}
     {% for suggestion in related %}
-      {% card { inputPath: "./src/" + suggestion + ".md", url: suggestion } %}
+        If you are seeing this, something has gone horribly wrong
+{#      {% card { inputPath: "./src/" + suggestion + ".md", url: suggestion } %}#}
     {% endfor %}
+
+    {#TODO % renderTemplate "webc" %}
+      <page-card></page-card>
+    {% endrenderTemplate %#}
   </div>
 </div>
 <!-- /page -->

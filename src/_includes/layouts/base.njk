@@ -26,19 +26,12 @@ eleventyComputed:
     <link rel="stylesheet" type="text/css" href="{{ '/public/style.css' | url }}" />
     {# Global site tag (gtag.js) - Google Analytics #}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPWGF8HK8P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-LPWGF8HK8P');
-    </script>
     <script src="{{ '/public/global.js' | url }}"></script>
     {% seo "" %}
   </head>
   <body>
     <a class="skip-to-content" href="#main">Skip to content</a>
-    {% include "../../_components/navbar.njk" %}
+    {% include "_components/navbar.njk" %}
 
     <a name="main"></a>
     <main>
