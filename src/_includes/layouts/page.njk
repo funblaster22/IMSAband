@@ -47,11 +47,17 @@ hero: /public/no-img.png
   </div>
   {% from "_components/card.njk" import card %}
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">
-    {% set ensembles = collections.all | includesAllTags(tag, "ensembles") %}
-    {% if ensembles.length > 0 %}
+    {# This hacky fix ensures the label for "Performing Ensembles" doesn't show unles it has content #}
+    {% set ensembles = false %}
+    {% for tag in tags %}
+      {% for ensemble in collections.all | includesAllTags(tag, "ensembles") %}
+        {% set ensembles = true %}
+      {% endfor %}
+    {% endfor %}
+    {% if tags.includes("concerts") and ensembles %}
       <h3>Performing Ensembles:</h3>
       {% for tag in tags %}
-        {% for ensemble in ensembles %}
+        {% for ensemble in collections.all | includesAllTags(tag, "ensembles") %}
           {{ card(ensemble.data) }}
         {% endfor %}
       {% endfor %}
