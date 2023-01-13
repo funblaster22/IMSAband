@@ -63,10 +63,10 @@ module.exports = function(eleventyConfig) {
     "woff2"
   ]);
   eleventyConfig.addPassthroughCopy("public");
-  
+
   /*
   From: https://github.com/artstorm/eleventy-plugin-seo
-  
+
   Adds SEO settings to the top of all pages
   The "glitch-default" bit allows someone to set the url in seo.json while
   still letting it have a proper glitch.me address via PROJECT_DOMAIN
@@ -128,6 +128,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksFilter("pageData", url => {
+    console.warn("Please try to avoid introspection");
     return getPageData('./src' + url);
   });
   eleventyConfig.addNunjucksFilter("includesAllTags", (arr, ...tags) => {
@@ -138,12 +139,11 @@ module.exports = function(eleventyConfig) {
       return tags.every(tag => (page.data.tags || []).includes(tag));
     });
   });
-  
+
   eleventyConfig.setBrowserSyncConfig({ ghostMode: false });
-  
+
   /*
-  From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426 
-  
+  From: https://github.com/11ty/eleventy/issues/529#issuecomment-568257426
   Adds {{ prevPost.url }} {{ prevPost.data.title }}, etc, to our njks templates
   */
   eleventyConfig.addCollection("posts", function(collection) {
@@ -177,28 +177,11 @@ module.exports = function(eleventyConfig) {
   });*/
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addNunjucksAsyncShortcode("card", async function({inputPath, url}) {
-    const data = getPageData(inputPath);
-    // I know resolve is depreciated, but it is the only way that allows incomplete URLS (eg. using /pages/about as base)
-    const imgSrc = urlLib.resolve(url, data.hero || "/public/no-img.png");
-    const imgMetadata = await convertImg(imgSrc);
-    //console.log(imgMetadata)
-    const img = Image.generateHTML(imgMetadata, {
-      alt: "",
-      decoding: "async",
-    });
-    return `
-<a href="${path.join(config.pathPrefix, url)}"><div class="card">
-    ${img}
-    <em>${data.date ? htmlDateString(data.date) : ""}</em>
-    <strong>${data.title}</strong>
-    ${data.description || ""}
-</div></a>
-`;
-  });
-
-  eleventyConfig.addNunjucksAsyncShortcode("img", async function(src, alt="", {style="", className="", sizes=[]}={}) {
-    const metadata = await convertImg(src, {sizes});
+  eleventyConfig.addNunjucksShortcode("img", function(src, alt="", {style="", className="", sizes=[]}={}) {
+    // This significantly speeds up development, especially since I can't use async shortcodes in macros
+    if (process.env.NODE_ENV !== "production")
+      return `<img src="${config.pathPrefix + src}" alt="${alt}" style="${style}" class="${className}">`;
+    const metadata = convertImg(src, {sizes, async: false});
 
     return `<!-- Image source: ./src${src} --> ` + Image.generateHTML(metadata, {
       alt: alt,

@@ -1,0 +1,32 @@
+{# Styles are located in style.css b/c it can be cached better & dedupe across pages #}
+<nav class="navbar navbar-expand-md navbar-dark">
+    <a href="{{ '/' | url }}"><img src="{{ '/public/favicon.png' | url }}" alt="IMSA band logo" style="height: 3em; width: auto;" /></a>
+    <a href="{{ ('javascript:history.back()' if page.url == '/pages/' else '/pages/') | url }}" class="navbar-toggler">
+        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">☰</span>
+        </button>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        {#{ collections.pages | eleventyNavigation | eleventyNavigationToHtml({
+        listClass: "navbar-nav", listItemClass: "navbar-nav", anchorClass: "nav-link",
+        listItemHasChildrenClass: "dropdown"
+        }) | safe }#}
+        <ul class="navbar-nav">
+            {% set navPages = collections.all | eleventyNavigation %}
+            {% for navPage in navPages %}
+            <li class="nav-item" {% if page.url == navPage.url %} aria-current="page"{% endif %}>
+                <a href="{{ navPage.url | url }}" class="nav-link">{{ navPage.title or navPage.key }}</a>
+            </li>
+            {% endfor %}
+            <li class="nav-item social">
+                <a href="https://www.youtube.com/user/IMSAschool/search?query=concert" target="_blank" rel="noopener noreferrer" class="nav-link"><img src="{{ '/public/youtube.svg' | url }}"></a>
+            </li>
+            <li class="nav-item social">
+                <a href="https://www.facebook.com/IMSA-Music-Parents-Page-105564110884454/" target="_blank" rel="noopener noreferrer" class="nav-link"><img src="{{ '/public/facebook.svg' | url }}"></a>
+            </li>
+            <li class="nav-item social">
+                <a href="https://funblaster22.github.io/PitchRead/" target="_blank" class="nav-link"><img src="{{ '/public/music-note.svg' | url }}"></a>
+            </li>
+        </ul>
+    </div>
+</nav>

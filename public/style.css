@@ -1,7 +1,7 @@
 /******************************************************************************
 START Glitch hello-app default styles
 
-The styles in this section do some minimal CSS resets, set default fonts and 
+The styles in this section do some minimal CSS resets, set default fonts and
 colors, and handle the layout for our footer and "Remix on Glitch" button. If
 you're new to CSS they may seem a little complicated, but you can scroll down
 to this section's matching END comment to see page-specific styles.
@@ -31,8 +31,14 @@ button, input, optgroup, select, textarea {
   font-size: inherit;
   line-height: inherit;
 }
-button {
+button, .button {
   cursor: pointer;
+  border-radius: 0.25rem;
+  border: 1px solid white;
+  background: transparent;
+  box-shadow: 0 0 20px black;
+  transition: background 500ms;
+  padding: 1px 6px;
 }
 
 /* Import fonts */
@@ -260,3 +266,106 @@ details {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8);
 }
+
+
+/* region Navbar Styles */
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+  }
+  .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  z-index: 1;
+  background: rgba(0, 0,0, 0.5);
+  width: 100vw;
+}
+.navbar-brand {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: box-shadow .15s ease-in-out;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  color: var(--color-text-main);
+  font-size: 15pt;
+}
+.collapse:not(.show) {
+  display: none;
+}
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  line-height: normal;
+}
+
+.social {
+  display: flex;
+}
+.social img {
+  height: 1em;
+}
+.social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* endregion */
