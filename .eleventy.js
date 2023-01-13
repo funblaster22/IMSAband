@@ -20,19 +20,22 @@ const config = {
   }
 };
 
-/** Returns a promise if async=true or an object if async=false */
-function convertImg(src, {sizes=[], async=true}={}) {
+/** Operates synchronously */
+function convertImg(src, sizes=[]) {//
   src = src  || "/public/no-img.png";
   const imgDir = path.parse(src).dir;
   // 11ty image does not support absolute file paths because it thinks they are URLs
   // Currently, any images have to go into the src/public directory
   try {
-    return (async ? Image : Image.statsSync)(path.join('src', src), {
+    const params = [path.join('src', src), {
       //widths,
       formats: ["jpeg", "avif"],
       outputDir: path.join(config.dir.output, imgDir),
       urlPath: path.join(config.pathPrefix, imgDir),
-    });
+    }];
+    // Still need to call Image to generate & save images. See https://www.11ty.dev/docs/plugins/image/#synchronous-shortcode
+    Image(...params);
+    return Image.statsSync(...params);
   }  catch {
     console.error("Image", src, "not found");
     return {jpeg: [ {} ]};
@@ -43,6 +46,7 @@ function convertImg(src, {sizes=[], async=true}={}) {
 function getPageData(input) {
   // TODO: this works in markdown, but not in config file :(
   // {{ (collections.all | getCollectionItem({ inputPath: './src/pages/ensembles/band.md', outputPath: 'build/pages/ensembles/band/index.html' } )).url | log }}
+  console.warn("Please try to avoid introspection");
   const str = fs.readFileSync(input, 'utf8');
   return matter(str).data;
 }
@@ -116,19 +120,18 @@ module.exports = function(eleventyConfig) {
   );
   // for some reason, async filters cause 11ty to quit without errors TODO: stay tuned to future updates
   eleventyConfig.addNunjucksFilter("img", src => {
-    const metadata = convertImg(src, {async: false});
+    const metadata = convertImg(src);
     const picture = Image.generateObject(metadata, {alt: ""}).picture;
     const test = picture.map(img => `url('${img?.source?.srcset || img.img.src}') type('${img?.source?.type || 'image/jpeg'}')`);
 
     return "-webkit-image-set(" + test.join(',') + ")";
   });
   eleventyConfig.addNunjucksFilter("imgJpg", src => {
-    const metadata = convertImg(src, {async: false});
+    const metadata = convertImg(src);
     return metadata.jpeg[0].url;
   });
 
   eleventyConfig.addNunjucksFilter("pageData", url => {
-    console.warn("Please try to avoid introspection");
     return getPageData('./src' + url);
   });
   eleventyConfig.addNunjucksFilter("includesAllTags", (arr, ...tags) => {
@@ -181,7 +184,7 @@ module.exports = function(eleventyConfig) {
     // This significantly speeds up development, especially since I can't use async shortcodes in macros
     if (process.env.NODE_ENV !== "production")
       return `<img src="${config.pathPrefix + src}" alt="${alt}" style="${style}" class="${className}">`;
-    const metadata = convertImg(src, {sizes, async: false});
+    const metadata = convertImg(src, sizes);
 
     return `<!-- Image source: ./src${src} --> ` + Image.generateHTML(metadata, {
       alt: alt,
