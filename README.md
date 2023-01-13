@@ -28,3 +28,5 @@ as long as you include the license and source code.
 
 I decided against Jekyl because it is written in Ruby, which I am unfamiliar with.
 I also figured it would be easier to incorporate extra frameworks with 11ty since it uses javascript.
+
+Here I'm documenting the thinking I did regarding the adoption of [webc](https://github.com/11ty/webc). It's really nice how it [integrates with 11ty](https://www.11ty.dev/docs/languages/webc/) and allows for JavaScript, but I've already invested a lot of time into Nunjucks & solving problems with it, and I feel like switching would raise more problems and I don't have that many "components". If I really need to make a component with scoped styles, I would use [declarative shadow DOM](https://web.dev/declarative-shadow-dom/).
