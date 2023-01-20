@@ -8,6 +8,17 @@ eleventyNavigation:
 tags: Chamber Strings
 ---
 
+The Chamber Strings will explore the music of different composers via analysis, rehearsal and performance. This exploration will
+provide students with an overview of the visual, auditory and aesthetic dimensions of instrumental music. Particular attention will be paid
+to ensemble participation in the context of rehearsal and performance. Students will develop further technical proficiency and enhance
+their musical understanding through problem-based learning, sight-reading exercises, tone development and intonation exercises, critical
+thinking skills, reflection, analysis and practice. Students will perform in formal concerts as well as have the opportunity to audition
+for and participate in the IHSA Solo/Ensemble Contest and in the ILMEA District and All-State Festivals. Private lessons are highly
+recommended. Student participation in the Chamber Strings is based upon a placement audition. This group is primarily comprised
+of upper classmen, and only 3-5% of the ensemble includes sophomores. Students from this ensemble will also perform with the
+Symphony Orchestra. Students will perform advanced orchestral literature and original transcriptions. Students enrolled in the IMSA
+Music Program are eligible to participate in any music sponsored co-curricular activities and/or events.
+
 \* = Section Leader<br/>
 \** = Concert Master
 
