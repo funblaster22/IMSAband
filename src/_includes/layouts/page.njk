@@ -80,13 +80,12 @@ hero: /public/no-img.png
       {{ card(nextPost.data) }}
     {% endif %}
 
-    {# TODO: I have no clue where related is coming from #}
+    {# 'related' is defined in the front matter #}
     {% if related.length > 0 %}
       <h3>Related:</h3>
     {% endif %}
     {% for suggestion in related %}
-        If you are seeing this, something has gone horribly wrong
-{#      {% card { inputPath: "./src/" + suggestion + ".md", url: suggestion } %}#}
+      {{ card((suggestion + ".md") | pageData) }}
     {% endfor %}
 
     {#TODO % renderTemplate "webc" %}

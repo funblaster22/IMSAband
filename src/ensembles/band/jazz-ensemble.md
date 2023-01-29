@@ -1,7 +1,7 @@
 ---
 title: Jazz Ensemble
 description: A club that plays jazz
-hero: /public/jazz-band.png
+hero: /public/jazz-band.jpg
 eleventyNavigation:
     key: Jazz Ensemble
     parent: Band

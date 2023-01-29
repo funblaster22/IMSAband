@@ -17,9 +17,9 @@ for and participate in the IHSA Solo/Ensemble Contest and in the ILMEA District 
 with Pep Band. Private lessons are highly recommended. Music students are eligible to participate in any music sponsored co-curricular
 activities and/or events.
 
+### Performers
 \* = Section Leader
 
-### Performers
 {%instrument "Flute" %}
 *Amanda Barajas
 *Komal Chivukula

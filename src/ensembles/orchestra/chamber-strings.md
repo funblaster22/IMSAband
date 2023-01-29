@@ -19,10 +19,10 @@ of upper classmen, and only 3-5% of the ensemble includes sophomores. Students f
 Symphony Orchestra. Students will perform advanced orchestral literature and original transcriptions. Students enrolled in the IMSA
 Music Program are eligible to participate in any music sponsored co-curricular activities and/or events.
 
+### Performers
 \* = Section Leader<br/>
 \** = Concert Master
 
-### Performers
 {% instrument "Violin I" %}
 **Minseo Emily Jung
 *Sooah Irene Park

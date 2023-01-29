@@ -17,10 +17,10 @@ for and participate in the IHSA Solo/Ensemble Contest and in the ILMEA District 
 recommended. Students enrolled in the IMSA Music Program are eligible to participate in any music sponsored co-curricular activities
 and/or events.
 
+### Performers
 \* = Section Leader<br/>
 \** = Concert Master
 
-### Performers
 {% instrument "Violin I" %}
 **Brooks Sonethongkham
 *Aashima Singh Sisodia

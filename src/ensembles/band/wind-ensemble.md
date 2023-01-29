@@ -19,9 +19,9 @@ This group is primarily comprised of upper classmen, and only 3-5% of the ensemb
 advanced band literature and original transcriptions. The top students from each section will perform with the Symphony Orchestra.
 Students enrolled in the IMSA Music Program are eligible to participate in any music sponsored co-curricular activities and/or events.
 
+### Performers
 \* = Section Leader
 
-### Performers
 {%instrument "Flute" %}
 *Christin Sanchez
 *Rushill Sambangi
