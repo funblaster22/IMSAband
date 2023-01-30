@@ -17,14 +17,14 @@ templateClass: tmpl-home
 
 <div class="home">
   <div>
-    {% for post in collections.posts.reverse() %}
+    {% for post in collections.posts %}
       {% if (loop.index <= 5 and page.url != post.url) %}
         {# TODO: would be cool if I could apply inset box shadows (currently the image covers them up) #}
         <div class="parallax-container perfect-center" style="height: 100vh;">
           <div style="text-align: center;max-width: 900px;">
             <h1>{{ post.data.title }}</h1>
             <h3>{{ post.data.description }}</h3>
-            <div>{{ post.data.page.date | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url | url }}' class="button">Read More</a></div>
+            <div>{{ (post.data.date or post.data.page.date) | htmlDateString }} &nbsp;&nbsp;&nbsp;&nbsp; <a href='{{ post.url | url }}' class="button">Read More</a></div>
           </div>
           {% img post.data.hero, "", {className: "parallax hero"} %}
         </div>
