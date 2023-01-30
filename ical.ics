@@ -9,8 +9,8 @@ NAME:IMSA performances
 
 
 BEGIN:VEVENT
-SUMMARY:ILMEA 2021
-UID:/concerts/ILMEA-21/
+SUMMARY:ILMEA
+UID:/concerts/ILMEA/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -19,9 +19,9 @@ DTEND:20211013T000000Z
 DTSTAMP:20211013T000000Z
 CATEGORIES:concerts,posts
 
-DESCRIPTION:Congratulations to everyone who participated in ILMEA!\n\nhttps://funblaster22.github.io/IMSAband/concerts/ILMEA-21/
+DESCRIPTION:Congratulations to everyone who participated in ILMEA!\n\nhttps://funblaster22.github.io/IMSAband/concerts/ILMEA/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/ILMEA-21/
+URL:https://funblaster22.github.io/IMSAband/concerts/ILMEA/
 END:VEVENT
 
 
@@ -45,7 +45,7 @@ END:VEVENT
 
 
 BEGIN:VEVENT
-SUMMARY:Pep Band Game
+SUMMARY:2022 Pep Band Season
 UID:/concerts/pep-band/2022-02-15/
 SEQUENCE:0
 STATUS:CONFIRMED
@@ -63,7 +63,7 @@ END:VEVENT
 
 
 BEGIN:VEVENT
-SUMMARY:Solo & Ensemble 2022
+SUMMARY:Solo & Ensemble
 UID:/concerts/solo-ensamble-22/
 SEQUENCE:0
 STATUS:CONFIRMED
