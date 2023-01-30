@@ -1,6 +1,8 @@
 ---
-title: Pep Band Season
-date: 2022-02-15
+title: Pep Band Game
+dates:
+    - 2022-02-15
+    - 2023-01-31
 tags:
     - Pep Band
 hero: /public/pep-band.jpg

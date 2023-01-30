@@ -112,6 +112,7 @@ module.exports = function(eleventyConfig) {
   }
 
   function htmlDateString(dateObj) {
+    if (typeof dateObj === "string") dateObj = new Date(dateObj);
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LL-dd-yyyy");
   }
   eleventyConfig.addFilter("htmlDateString", htmlDateString);
@@ -163,7 +164,16 @@ module.exports = function(eleventyConfig) {
     return coll;
   });
   eleventyConfig.addCollection("concerts", function(collection) {
-    return collection.getFilteredByTag("concerts").reverse();
+    //console.log(collection.getFilteredByTag("concerts").filter(i => !!i.data.date).map(i => ({url: i.url, data: {date: i.data.date}})));
+    return collection.getFilteredByTag("concerts").sort((a, b) => {
+      //console.log(a.url, b.url, htmlDateString(a.data.date), htmlDateString(b.data.date), new Date(a.data.date) - new Date(b.data.date), "is a bigger?", new Date(a.data.date) > new Date(b.data.date))
+      const diff = new Date(b.data.date) - new Date(a.data.date);
+      return isNaN(diff) ? -1 : diff;
+    });
+    // lol computed properties are at data.date, not page.date (https://github.com/11ty/eleventy/issues/2514)
+    // These aren't always guaranteed to be date objects b/c of conversion from dates[] to date (computed property)
+    // check a.date & b.date b/c Javascript has bad, unpredictable behavior for undefined/NaN object values (specifically)
+       // Specifically, '/concerts' page is causing issues, even though it isn't even shown >:(
   });
   eleventyConfig.addCollection("navigation", function(collection) {
     // This is the stupidest, most verbose code I've ever written >:(

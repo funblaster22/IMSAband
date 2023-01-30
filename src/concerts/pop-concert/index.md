@@ -1,6 +1,7 @@
 ---
 title: Pop Concert
-date: 2022-04-01
+dates:
+    - 2022-04-01
 tags:
     - Wind Ensemble
     - Concert Band

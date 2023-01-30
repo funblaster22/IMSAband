@@ -3,11 +3,16 @@
   layout: "layouts/page.njk",
   templateClass: "tmpl-concert",
   pagination: {
-    data: "testdata",
+    data: "dates",
     size: 1,
-    addAllPagesToCollections: true
+    addAllPagesToCollections: true,
+    generatePageOnEmptyData: true  // TODO: need >= v2.0.0 for this to work
   },
-  testdata: ["21", "22", "23"]
+  dates: [],
+  eleventyComputed: {
+    date: "{{ pagination.items[0] }}",  // must use this wierd syntax per https://github.com/11ty/eleventy/issues/1649
+    permalink: "{{ page.filePathStem | replace('/index', '') }}/{{ pagination.items[0] | htmlDateString }}/index.html"
+  }
 }
 ---
 
@@ -22,7 +27,6 @@
     {% endfor -%}
   </p>
 {% endif %}
-{{ pagination.links | dump }}
 
 {{ content | safe }}
 <script>
