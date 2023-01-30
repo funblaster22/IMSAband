@@ -1,9 +1,29 @@
----
-layout: layouts/page.njk
-templateClass: tmpl-concert
+---js
+{
+  layout: "layouts/page.njk",
+  templateClass: "tmpl-concert",
+  pagination: {
+    data: "testdata",
+    size: 1,
+    addAllPagesToCollections: true
+  },
+  testdata: ["21", "22", "23"]
+}
 ---
 
 <!-- concert -->
+<p style="font-weight: bold">{{ date | htmlDateString }} (<span id="rel-time"></span>)</p>
+
+{% if testdata.length > 0 %}
+  <p style="font-weight: bold">
+    Previous Years:
+    {%- for item in pagination.items %}
+      <a>{{ item }}</a>
+    {% endfor -%}
+  </p>
+{% endif %}
+{{ pagination.links | dump }}
+
 {{ content | safe }}
 <script>
   const formatter = new Intl.RelativeTimeFormat('en-US', {
