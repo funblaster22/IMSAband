@@ -45,8 +45,8 @@ END:VEVENT
 
 
 BEGIN:VEVENT
-SUMMARY:2022 Pep Band Season
-UID:/concerts/pep-band/2022-02-15/
+SUMMARY:Pep Band Season
+UID:/concerts/pep-band/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -55,16 +55,16 @@ DTEND:20220215T000000Z
 DTSTAMP:20220215T000000Z
 CATEGORIES:concerts,posts,Pep Band
 
-DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pep-band/2022-02-15/
+DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pep-band/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/pep-band/2022-02-15/
+URL:https://funblaster22.github.io/IMSAband/concerts/pep-band/
 END:VEVENT
 
 
 
 BEGIN:VEVENT
 SUMMARY:Solo & Ensemble
-UID:/concerts/solo-ensamble-22/
+UID:/concerts/solo-ensemble/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -73,16 +73,16 @@ DTEND:20220305T000000Z
 DTSTAMP:20220305T000000Z
 CATEGORIES:concerts,posts
 
-DESCRIPTION:Congratulations to everyone who participated in Solo & Ensemble!\n\nhttps://funblaster22.github.io/IMSAband/concerts/solo-ensamble-22/
+DESCRIPTION:Congratulations to everyone who participated in Solo & Ensemble!\n\nhttps://funblaster22.github.io/IMSAband/concerts/solo-ensemble/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/solo-ensamble-22/
+URL:https://funblaster22.github.io/IMSAband/concerts/solo-ensemble/
 END:VEVENT
 
 
 
 BEGIN:VEVENT
 SUMMARY:Pop Concert
-UID:/concerts/pop-concert/22/
+UID:/concerts/pop-concert/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
@@ -91,9 +91,9 @@ DTEND:20220401T000000Z
 DTSTAMP:20220401T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band
 
-DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pop-concert/22/
+DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pop-concert/
 
-URL:https://funblaster22.github.io/IMSAband/concerts/pop-concert/22/
+URL:https://funblaster22.github.io/IMSAband/concerts/pop-concert/
 END:VEVENT
 
 END:VCALENDAR
