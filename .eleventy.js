@@ -112,7 +112,7 @@ module.exports = function(eleventyConfig) {
   }
 
   function htmlDateString(dateObj) {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LL-dd-yyyy");
   }
   eleventyConfig.addFilter("htmlDateString", htmlDateString);
   eleventyConfig.addFilter("icalDateString", dateObj =>

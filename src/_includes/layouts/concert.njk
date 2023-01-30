@@ -5,4 +5,11 @@ templateClass: tmpl-concert
 
 <!-- concert -->
 {{ content | safe }}
+<script>
+  const formatter = new Intl.RelativeTimeFormat('en-US', {
+    numeric: 'auto'
+  });
+  const daysAgo = Math.floor((new Date("{{ date | htmlDateString }}") - new Date()) / 8.64e+7);  // Convert ms to days
+  document.getElementById("rel-time").innerText = daysAgo < 0 ? formatter.format(Math.floor(daysAgo / 31), 'month') : formatter.format(daysAgo, 'day')
+</script>
 <!-- /concert -->
