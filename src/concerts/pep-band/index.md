@@ -1,5 +1,5 @@
 ---
-title: 2022 Pep Band Season
+title: Pep Band Season
 date: 2022-02-15
 tags:
     - Pep Band
