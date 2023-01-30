@@ -7,7 +7,7 @@ tags:
     - Concert Band
     - Chamber Strings
     - String Orchestra
-hero: /concerts/fall-concert/americana.png
+hero: americana.png
 ---
 
 Let us take you on a kaleidoscopic journey through american music! 

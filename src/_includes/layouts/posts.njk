@@ -14,7 +14,7 @@ templateClass: tmpl-posts
   <div class="postContainer">
     {% for post in collections[collection] %}
       {% if post.url != page.url %}
-        {{ card(post.data) }}
+        {% card post.data %}
       {% endif %}
     {% endfor %}
     {# TODO: I wish I could combine njk block with 11ty front matter :/ #}

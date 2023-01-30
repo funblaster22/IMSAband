@@ -191,10 +191,23 @@ module.exports = function(eleventyConfig) {
   });*/
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addNunjucksShortcode("img", function(src, alt="", {style="", className="", sizes=[]}={}) {
+  eleventyConfig.addNunjucksShortcode("card", function(pageData) {
+    return `
+<a href="${path.join(config.pathPrefix, pageData.page.url)}"><div class="card">
+    ${preprocessImg(pageData.hero)}
+    <em>${pageData.date ? htmlDateString(pageData.date) : ""}</em>
+    <strong>${pageData.title}</strong>
+    ${pageData.description || ""}
+</div></a>
+`;
+  });
+
+  function preprocessImg(src, alt="", {style="", className="", sizes=[]}={}) {
     // This significantly speeds up development, especially since I can't use async shortcodes in macros
+    print(this.page?.url)
     if (process.env.NODE_ENV !== "production")
-      return `<img src="${config.pathPrefix + src}" alt="${alt}" style="${style}" class="${className}">`;
+      // I think images rendered in macros don't have a 'this.page' property
+      return `<img src="${path.join(this.page?.url || config.pathPrefix, src)}" alt="${alt}" style="${style}" class="${className}">`;
     const metadata = convertImg(src, sizes);
 
     return `<!-- Image source: ./src${src} --> ` + Image.generateHTML(metadata, {
@@ -204,7 +217,8 @@ module.exports = function(eleventyConfig) {
       style,
       class: className
     })
-  });
+  }
+  eleventyConfig.addNunjucksShortcode("img", preprocessImg);
 
   eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {
     const items = content.replace(/^\*\*/gm, '<abbr title="Concert Master">**</abbr> ')
