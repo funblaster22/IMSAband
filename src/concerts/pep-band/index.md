@@ -7,10 +7,10 @@ dates:
     - 2023-02-10
 tags:
     - Pep Band
-hero: /public/pep-band.jpg
+hero: /ensembles/band/pep-band/cover.jpg
 ---
 
 The 2022 school pep band season was a huge success, with the Titans providing energetic and lively musical support at all of the home basketball games. Go Titans!
 
-<!-- TODO: Generate with template -->
-Images coming soon!
+{% from "_components/media.njk" import media %}
+{{ media("/ensembles/band/pep-band") }}
