@@ -45,7 +45,7 @@ hero: /public/no-img.png
     {{ content | safe }}
 {#    <h3>Photos</h3> TODO: only show if content#}
     {% from "_components/media.njk" import media %}
-    {{ media(page.url) }}
+    {{ media(page.inputPath) }}
   </div>
   {% from "_components/card.njk" import card %}
   <div class="suggestions" style="display: flex; flex-direction: column; align-items: center; flex-grow: 1;">

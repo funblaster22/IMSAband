@@ -211,8 +211,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksShortcode("allimg", function(locations) {
     if (!(locations instanceof Array))
       locations = [locations];
-    const entries = glob.sync(locations.map(location => config.dir.input + location + "/**/*.{jpg,jpeg,png}", { caseSensitiveMatch: false }));
-    return entries.reduce((acc, outputPath) => acc + preprocessImg(outputPath.replace(config.dir.input + "/", "/")), "");
+    // Can't use page.url b/c paginated pages permalink don't match file location
+    // TODO: make path operations more robust (.replace "./" "/" feels like a hack)
+    const entries = glob.sync(locations.map(location =>
+      config.dir.input + (path.extname(location) === "" ? location : path.dirname(location)).replaceAll(config.dir.input + "/", "").replaceAll("./", "/") + "/**/*.{jpg,jpeg,png}",
+      { caseSensitiveMatch: false }
+    ));
+    return entries.reduce((acc, outputPath) =>
+      acc + preprocessImg(outputPath.replace(config.dir.input + "/", "/")), "");
   });
 
   eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {

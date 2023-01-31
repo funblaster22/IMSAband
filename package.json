@@ -4,6 +4,7 @@
   "description": "IMSA's website for all music.",
   "scripts": {
     "start": "eleventy --serve",
+    "debug": "cross-env DEBUG=Eleventy* eleventy --serve",
     "build": "NODE_ENV=production eleventy"
   },
   "devDependencies": {
