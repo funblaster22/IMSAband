@@ -1,8 +1,4 @@
----
-layout: layouts/base.njk
-templateClass: tmpl-media
----
-
+{% macro media(locations) %}
 <!-- media -->
 <style>
   #photos {
@@ -17,6 +13,7 @@ templateClass: tmpl-media
 </style>
 <script src="{{ '/public/gallery.js' | url }}"></script>
 <div id="photos">
-  {{ content | safe }}
+  {% allimg locations %}
 </div>
 <!-- /media -->
+{% endmacro %}

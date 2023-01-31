@@ -191,7 +191,7 @@ module.exports = function(eleventyConfig) {
   });*/
 
   // region Nunjucks Shortcodes
-  eleventyConfig.addNunjucksShortcode("img", function(src, alt="", {style="", className="", sizes=[]}={}) {
+  function preprocessImg(src, alt="", {style="", className="", sizes=[]}={}) {
     // This significantly speeds up development, especially since I can't use async shortcodes in macros
     if (process.env.NODE_ENV !== "production")
       return `<img src="${config.pathPrefix + src}" alt="${alt}" style="${style}" class="${className}">`;
@@ -204,6 +204,15 @@ module.exports = function(eleventyConfig) {
       style,
       class: className
     })
+  }
+
+  eleventyConfig.addNunjucksShortcode("img", preprocessImg);
+
+  eleventyConfig.addNunjucksShortcode("allimg", function(locations) {
+    if (!(locations instanceof Array))
+      locations = [locations];
+    const entries = glob.sync(locations.map(location => config.dir.input + location + "/**/*.{jpg,jpeg,png}", { caseSensitiveMatch: false }));
+    return entries.reduce((acc, outputPath) => acc + preprocessImg(outputPath.replace(config.dir.input + "/", "/")), "");
   });
 
   eleventyConfig.addPairedNunjucksShortcode("instrument", function(content, instrument) {

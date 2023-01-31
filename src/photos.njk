@@ -1,0 +1,12 @@
+---
+title: Photos
+description: Photo and Video Gallery
+layout: layouts/base.njk
+eleventyNavigation:
+    key: Photos
+    order: 45
+---
+
+<br /><br /> {# This is kinda a hack #}
+{% from "_components/media.njk" import media %}
+{{ media(["/ensembles", "/concerts"]) }}
