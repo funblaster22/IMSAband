@@ -43,3 +43,4 @@ function gallery() {
 gallery();
 window.addEventListener("resize", gallery);
 window.addEventListener("DOMContentLoaded", gallery);
+window.addEventListener("load", gallery);
