@@ -6,7 +6,7 @@ related:
     - /posts/new-website
 eleventyNavigation:
     key: About
-    order: 105
+    order: 110
 tags: []
 ---
 

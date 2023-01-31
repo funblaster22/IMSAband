@@ -15,7 +15,8 @@ function gallery() {
     //alert(window.innerWidth);
 
     for (var photo of photos) {
-        photo.height = targetHeight;
+        photo._height = targetHeight;
+        photo.style.height = photo._height + "px";
         if (currentWidth + photo.width >= window.innerWidth) {
             diffOmit = window.innerWidth - currentWidth;
             diffAdd = currentWidth + photo.width - window.innerWidth;
@@ -25,8 +26,9 @@ function gallery() {
             scaleFactor = window.innerWidth / (currentWidth - row.length * 5);
             //alert(scaleFactor * (currentWidth - row.length * 5));
             for (var element of row) {
-                element.height *= scaleFactor;
-                element.height -= 8;
+                element._height *= scaleFactor;
+                element._height -= 8;
+                element.style.height = element._height + "px";
             }
 
             currentWidth = 5;
