@@ -17,6 +17,7 @@ eleventyComputed:
     {% if eleventy.env.NODE_ENV == "production"  %}
       <meta http-equiv='Content-Security-Policy' content="default-src 'none'; script-src 'self' https://www.googletagmanager.com; connect-src https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' *; font-src 'self';">
     {% endif %}
+    <link rel="preload" href="{{ '/public/Grotesk-Regular.otf' | url }}" as="font" type="font/otf">
     <link rel="icon" href="{{ '/public/favicon.png' | url }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {#
