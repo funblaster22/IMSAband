@@ -1,0 +1,4 @@
+{
+  "tags": ["performances", "posts"],
+  "layout": "layouts/concert.njk"
+}
