@@ -9,6 +9,9 @@ eleventyNavigation:
 ---
 
 <div style="height: 100px"></div>
-{% img "/public/calendar.jpg", "Calendar", {style: "height: 80vh"} %}
+{# TODO: for some reason, the generated HTML doesn't point to the correct image path, so I'm hard-coding it for now
+{% img "/public/calendar.jpg", "Calendar", {style: "max-height: 80vh; max-width: 100%;"} %}
+#}
+<img src="{{ '/public/calendar.jpg' | url}}" decoding="async" loading="lazy" style="max-height: 80vh; max-width: 100%;" />
 <p><a href="{{ '/ical.ics' | url }}" target="ical"><button>Download Calendar</button></a></p>
 <iframe id="preview" style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" src="https://gra0007.github.io/modern-cal-embed/iframe.html?ical={{site.url}}{{ '/ical.ics' | url }}&title=1&nav=1&date=1&view=1&details=0&monstart=0&dview=0&color=%231A73E8&colorbg=%23FFFFFF&colortxt=%23000000&colorsecondarytxt=%23FFFFFF" sandbox="allow-scripts allow-same-origin allow-top-navigation" allowtransparency="true" scrolling="no" frameborder="0" height="600px" width="100%"></iframe>
