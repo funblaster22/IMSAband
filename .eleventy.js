@@ -112,12 +112,12 @@ module.exports = function(eleventyConfig) {
   }
 
   function htmlDateString(dateObj) {
-    if (typeof dateObj === "string") dateObj = new Date(dateObj);
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LL-dd-yyyy");
+    // Construct a new Date b/c dates extracted from 'dates' front matter are strings. Nothing happens if dateObj is already a date
+    return DateTime.fromJSDate(new Date(dateObj), { zone: "utc" }).toFormat("LL-dd-yyyy");
   }
   eleventyConfig.addFilter("htmlDateString", htmlDateString);
   eleventyConfig.addFilter("icalDateString", dateObj =>
-      DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyyLLdd'T'HHmmss'Z'")
+      DateTime.fromJSDate(new Date(dateObj), { zone: "utc" }).toFormat("yyyyLLdd'T'HHmmss'Z'")
   );
   // for some reason, async filters cause 11ty to quit without errors TODO: stay tuned to future updates
   eleventyConfig.addNunjucksFilter("img", src => {
