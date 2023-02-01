@@ -14,9 +14,9 @@ UID:/concerts/senior-concert/05-21-2023/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20230521T000000Z
+DTEND:20230521T000000Z
+DTSTAMP:20230521T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band,Chamber Strings,String Orchestra
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/senior-concert/05-21-2023/
@@ -32,9 +32,9 @@ UID:/performances/pep-band/02-10-2023/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20230210T000000Z
+DTEND:20230210T000000Z
+DTSTAMP:20230210T000000Z
 CATEGORIES:performances,posts,Pep Band
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/performances/pep-band/02-10-2023/
@@ -50,9 +50,9 @@ UID:/performances/pep-band/02-06-2023/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20230206T000000Z
+DTEND:20230206T000000Z
+DTSTAMP:20230206T000000Z
 CATEGORIES:performances,posts,Pep Band
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/performances/pep-band/02-06-2023/
@@ -68,9 +68,9 @@ UID:/performances/pep-band/01-31-2023/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20230131T000000Z
+DTEND:20230131T000000Z
+DTSTAMP:20230131T000000Z
 CATEGORIES:performances,posts,Pep Band
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/performances/pep-band/01-31-2023/
@@ -86,9 +86,9 @@ UID:/concerts/pop-concert/04-01-2022/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20220401T000000Z
+DTEND:20220401T000000Z
+DTSTAMP:20220401T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pop-concert/04-01-2022/
@@ -104,9 +104,9 @@ UID:/performances/solo-ensemble/03-05-2022/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20220305T000000Z
+DTEND:20220305T000000Z
+DTSTAMP:20220305T000000Z
 CATEGORIES:performances,posts
 
 DESCRIPTION:Congratulations to everyone who participated in Solo & Ensemble!\n\nhttps://funblaster22.github.io/IMSAband/performances/solo-ensemble/03-05-2022/
@@ -122,9 +122,9 @@ UID:/performances/pep-band/02-15-2022/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20220215T000000Z
+DTEND:20220215T000000Z
+DTSTAMP:20220215T000000Z
 CATEGORIES:performances,posts,Pep Band
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/performances/pep-band/02-15-2022/
@@ -158,9 +158,9 @@ UID:/concerts/fall-concert/halloween-concert/11-02-2021/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20211102T000000Z
+DTEND:20211102T000000Z
+DTSTAMP:20211102T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band,Chamber Strings,String Orchestra
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/fall-concert/halloween-concert/11-02-2021/
@@ -176,9 +176,9 @@ UID:/concerts/fall-concert/kaleidoscope-americana/10-29-2021/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20211029T000000Z
+DTEND:20211029T000000Z
+DTSTAMP:20211029T000000Z
 CATEGORIES:concerts,posts,Wind Ensemble,Concert Band,Chamber Strings,String Orchestra
 
 DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/fall-concert/kaleidoscope-americana/10-29-2021/
@@ -194,9 +194,9 @@ UID:/performances/ILMEA/10-13-2021/
 SEQUENCE:0
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
-DTSTART:Invalid DateTime
-DTEND:Invalid DateTime
-DTSTAMP:Invalid DateTime
+DTSTART:20211013T000000Z
+DTEND:20211013T000000Z
+DTSTAMP:20211013T000000Z
 CATEGORIES:performances,posts
 
 DESCRIPTION:Congratulations to everyone who participated in ILMEA!\n\nhttps://funblaster22.github.io/IMSAband/performances/ILMEA/10-13-2021/
