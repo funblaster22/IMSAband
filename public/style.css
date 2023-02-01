@@ -8,13 +8,14 @@ to this section's matching END comment to see page-specific styles.
 ******************************************************************************/
 /* Our default values set as CSS variables */
 :root {
-  --color-bg: #193769;
+  --color-bg: #1A3668;
   --color-text-main: #eaebed;
-  --color-primary: #01aed9;
+  --color-primary: #00B4DF;
+  --color-secondary: #8B92AB;
   --wrapper-height: 85vh;
   --image-max-width: 320px;
-  --font-family: "HK Grotesk";
-  --font-family-header: "HK Grotesk";
+  --font-family: "Source Sans Pro";
+  --font-family-header: "DIN Pro";
 }
 
 /* Basic page style resets */
@@ -42,15 +43,19 @@ button, .button {
 }
 
 /* Import fonts */
+/* Importing this from Google (maybe it'll be faster?
 @font-face {
-  font-family: HK Grotesk;
-  src: url("/IMSAband/public/Grotesk-Regular.otf") format("opentype");
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-}
+  src: url("/IMSAband/public/") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
 @font-face {
-  font-family: HK Grotesk;
-  font-weight: bold;
-  src: url("/IMSAband/public/Grotesk-Bold.otf") format("opentype");
+  font-family: 'DIN Pro';
+  font-style: bold;
+  src: url("/IMSAband/public/D-DIN-PRO-700-Bold.otf") format("opentype");
   font-display: swap;
 }
 
@@ -63,7 +68,7 @@ button, .button {
 
 .footer a:link,
 .footer a:visited {
-  font-family: HK Grotesk sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.1rem;
@@ -175,7 +180,7 @@ a {
 /* Title style adjustments */
 .title-lg {
   color: var(--color-text-main);
-  font-family: HK Grotesk sans-serif;
+  font-family: var(--font-family-header), sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 1.5;
