@@ -26,6 +26,7 @@ CATEGORIES:{{ event.data.tags.join(",") }}
 DESCRIPTION:{{event.data.description | safe}}\n\n{{url}}
 {#CREATED:20210827T230427Z#}
 URL:{{ url }}
+LOCATION:{{ url }}
 END:VEVENT
 {% endfor %}
 END:VCALENDAR
