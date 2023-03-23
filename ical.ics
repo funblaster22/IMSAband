@@ -28,6 +28,25 @@ END:VEVENT
 
 
 BEGIN:VEVENT
+SUMMARY:Pop Concert
+UID:/concerts/pop-concert/03-31-2023/
+SEQUENCE:0
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+DTSTART:20230331T000000Z
+DTEND:20230331T000000Z
+DTSTAMP:20230331T000000Z
+CATEGORIES:concerts,posts,Wind Ensemble,Concert Band
+
+DESCRIPTION:\n\nhttps://funblaster22.github.io/IMSAband/concerts/pop-concert/03-31-2023/
+
+URL:https://funblaster22.github.io/IMSAband/concerts/pop-concert/03-31-2023/
+LOCATION:https://funblaster22.github.io/IMSAband/concerts/pop-concert/03-31-2023/
+END:VEVENT
+
+
+
+BEGIN:VEVENT
 SUMMARY:Pep Band Game
 UID:/performances/pep-band/02-10-2023/
 SEQUENCE:0
